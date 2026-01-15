@@ -48,7 +48,8 @@ if (storedTheme) {
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
-    const nextTheme = document.body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    const nextTheme =
+      document.body.getAttribute("data-theme") === "dark" ? "light" : "dark";
     setTheme(nextTheme);
   });
 }
