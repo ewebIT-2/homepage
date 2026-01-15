@@ -29,6 +29,7 @@ if (storedLang) {
 
 function setTheme(theme) {
   document.body.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-theme", theme);
   if (themeToggle) {
     const isDark = theme === "dark";
     themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
