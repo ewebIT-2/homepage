@@ -446,6 +446,15 @@ body[data-theme="dark"] .theme-toggle .icon-moon {
   gap: 1.5rem;
 }
 
+.services-grid {
+  gap: 3.2rem 2.4rem;
+}
+
+.services-grid-wrap {
+  width: min(100% - 2.5rem, 1240px);
+  margin: 0 auto;
+}
+
 .card-grid,
 .list-grid,
 .package-grid,
@@ -453,6 +462,132 @@ body[data-theme="dark"] .theme-toggle .icon-moon {
 .legal-grid {
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
+
+.list-grid.services-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 1fr;
+}
+
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 3.4rem 2.6rem 2.2rem;
+  border-radius: 24px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid transparent;
+  box-shadow: none;
+  min-height: 280px;
+  height: 100%;
+  animation: riseIn 900ms ease;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease,
+    background 220ms ease;
+}
+
+body[data-theme="dark"] .service-card {
+  background: transparent;
+  color: #eef3f8;
+}
+
+.service-card h3 {
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.85rem;
+  color: var(--accent-strong);
+}
+
+.service-card p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.service-icon {
+  position: absolute;
+  top: -30px;
+  left: 2.4rem;
+  width: 74px;
+  height: 74px;
+  border-radius: 20px;
+  background: linear-gradient(160deg, var(--accent-soft), rgba(5, 15, 28, 0.9));
+  color: var(--accent);
+  border: 1px solid var(--accent-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 16px 28px rgba(2, 6, 12, 0.55);
+  transition: transform 240ms ease, box-shadow 240ms ease, color 240ms ease;
+}
+
+body[data-theme="light"] .service-icon {
+  background: linear-gradient(160deg, rgba(27, 99, 240, 0.12), #ffffff);
+  color: var(--accent-strong);
+  border-color: rgba(27, 99, 240, 0.2);
+  box-shadow: 0 12px 20px rgba(14, 26, 43, 0.12);
+}
+
+.service-icon svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 240ms ease;
+}
+
+.service-card:hover,
+.service-card:focus-within {
+  transform: translateY(-8px);
+  border-color: var(--accent-soft);
+  box-shadow: 0 20px 40px rgba(2, 6, 12, 0.5), 0 0 0 1px var(--accent-soft);
+  background: linear-gradient(
+    150deg,
+    var(--accent-soft),
+    rgba(5, 15, 28, 0.9) 68%
+  );
+  color: #ffffff;
+}
+
+body[data-theme="dark"] .service-card:hover,
+body[data-theme="dark"] .service-card:focus-within {
+  color: #0b0f12;
+}
+
+body[data-theme="light"] .service-card:hover,
+body[data-theme="light"] .service-card:focus-within {
+  background: linear-gradient(
+    150deg,
+    rgba(27, 99, 240, 0.14),
+    rgba(255, 255, 255, 0.92) 70%
+  );
+  color: var(--text);
+}
+
+
+.service-card:hover .service-icon,
+.service-card:focus-within .service-icon {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 34px rgba(2, 6, 12, 0.65);
+  color: var(--accent-strong);
+}
+
+.service-card:hover .service-icon svg,
+.service-card:focus-within .service-icon svg {
+  animation: iconPulse 900ms ease, iconWiggle 1200ms ease;
+  transform: translateY(-1px);
+}
+
+body[data-theme="dark"] .service-card h3 {
+  color: #f8fbff;
+}
+
+body[data-theme="dark"] .service-card p {
+  color: rgba(238, 243, 248, 0.82);
+}
+
 
 .card,
 .list-card,
@@ -553,6 +688,7 @@ body[data-theme="dark"] .theme-toggle .icon-moon {
 
 .card:hover,
 .list-card:hover,
+.service-card:hover,
 .package-card:hover,
 .timeline-step:hover,
 .contact-card:hover,
@@ -673,6 +809,36 @@ body[data-theme="dark"] .site-footer {
   100% {
     opacity: 0;
     transform: scale(1.2);
+  }
+}
+
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes iconWiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
