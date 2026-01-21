@@ -602,71 +602,323 @@
 
       <section class="section" id="faq">
         <div class="container">
-          <div class="section-header" data-lang="de">
-            <h2>FAQ</h2>
+          <div class="section-header centered" data-lang="de">
+            <p class="eyebrow">Häufig gestellte Fragen</p>
+            <h2 class="section-title">Häufig gestellte Fragen</h2>
+            <p class="section-copy">
+              Durchstöbern Sie unsere FAQ für Antworten auf alles, was Sie über
+              unsere Arbeit, unsere Preise, unseren Prozess und wie alles
+              funktioniert wissen möchten.
+            </p>
           </div>
-          <div class="section-header" data-lang="en">
-            <h2>FAQ</h2>
+          <div class="section-header centered" data-lang="en">
+            <p class="eyebrow">Frequently Asked Questions</p>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-copy">
+              Browse our FAQ for answers to everything you would like to know
+              about what we do, what we charge, our process, and how everything
+              works.
+            </p>
+          </div>
+          <div class="faq-filters" data-faq-filters data-lang="de">
+            <p class="sr-only">FAQ nach Kategorien filtern</p>
+            <button class="faq-filter-button" type="button" data-faq-filter="pricing" aria-pressed="false">Preise &amp; Zahlung</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="process" aria-pressed="false">Ablauf</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="ownership" aria-pressed="false">Besitz &amp; Betrieb</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="support" aria-pressed="false">Support</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="seo" aria-pressed="false">SEO &amp; Datenschutz</button>
+          </div>
+          <div class="faq-filters" data-faq-filters data-lang="en">
+            <p class="sr-only">Filter FAQs by category</p>
+            <button class="faq-filter-button" type="button" data-faq-filter="pricing" aria-pressed="false">Pricing &amp; Payments</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="process" aria-pressed="false">Process</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="ownership" aria-pressed="false">Ownership</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="support" aria-pressed="false">Support</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="seo" aria-pressed="false">SEO &amp; Privacy</button>
           </div>
           <div class="faq-grid">
-            <details data-lang="de">
-              <summary>Warum sind Sie so günstig?</summary>
-              <p>
-                Wir arbeiten schlank, ohne Agenturkosten, und setzen auf klare
-                Prozesse.
-              </p>
+            <details data-lang="de" data-faq-category="pricing">
+              <summary>Was kostet es und was ist im Preis enthalten?</summary>
+              <div class="faq-content">
+                <p>
+                  Sie erhalten ein transparentes Paket inkl. Design, Umsetzung,
+                  Mobile-Optimierung, Basis-SEO, Hosting und Support. Extras
+                  (z. B. zusätzliche Seiten oder Content) sind klar
+                  ausgewiesen.
+                </p>
+              </div>
             </details>
-            <details data-lang="en">
-              <summary>Why are you so affordable?</summary>
-              <p>
-                We work lean, without agency overhead, and follow clear
-                processes.
-              </p>
+            <details data-lang="en" data-faq-category="pricing">
+              <summary>What does it cost and what is included?</summary>
+              <div class="faq-content">
+                <p>
+                  You get transparent pricing that includes design, build,
+                  mobile optimization, basic SEO, hosting, and support. Extras
+                  (like additional pages or content) are listed separately.
+                </p>
+              </div>
             </details>
-            <details data-lang="de">
-              <summary>Wie lange dauert ein Projekt?</summary>
-              <p>
-                Je nach Umfang 1 bis 4 Wochen. Wir geben einen klaren Zeitplan.
-              </p>
+            <details data-lang="de" data-faq-category="pricing">
+              <summary>Welche Zahlungsmodelle bieten Sie an?</summary>
+              <div class="faq-content">
+                <p>
+                  Wir arbeiten mit klaren Festpreisen oder transparenten
+                  Paketen. Die Zahlung erfolgt in Meilensteinen, damit Sie
+                  jederzeit wissen, wofür Sie zahlen.
+                </p>
+              </div>
             </details>
-            <details data-lang="en">
-              <summary>How long does a project take?</summary>
-              <p>
-                Depending on scope, 1 to 4 weeks. We provide a clear timeline.
-              </p>
+            <details data-lang="en" data-faq-category="pricing">
+              <summary>Which payment models do you offer?</summary>
+              <div class="faq-content">
+                <p>
+                  We work with clear fixed prices or transparent packages.
+                  Payments follow milestones so you always know what you are
+                  paying for.
+                </p>
+              </div>
             </details>
-            <details data-lang="de">
-              <summary>Können Sie Domain und E-Mail einrichten?</summary>
-              <p>
-                Ja, wir unterstützen bei Domain, E-Mail und DNS-Einrichtung.
-              </p>
+            <details data-lang="de" data-faq-category="pricing">
+              <summary>Welche laufenden Kosten kommen nach dem Launch dazu?</summary>
+              <div class="faq-content">
+                <p>
+                  Typische laufende Kosten sind Hosting, Domain und optionaler
+                  Support. Wir nennen diese im Angebot, damit Sie langfristig
+                  planen können.
+                </p>
+              </div>
             </details>
-            <details data-lang="en">
-              <summary>Can you set up domain and email?</summary>
-              <p>Yes, we support domain, email, and DNS setup.</p>
+            <details data-lang="en" data-faq-category="pricing">
+              <summary>What ongoing costs are there after launch?</summary>
+              <div class="faq-content">
+                <p>
+                  Typical ongoing costs are hosting, domain, and optional
+                  support. We list these in the proposal so you can plan
+                  long-term.
+                </p>
+              </div>
             </details>
-            <details data-lang="de">
-              <summary>Kann die Seite später erweitert werden?</summary>
-              <p>
-                Ja, Struktur und Code sind erweiterbar und modular aufgebaut.
-              </p>
+            <details data-lang="de" data-faq-category="process">
+              <summary>Wie lange dauert die Umsetzung und was brauchen Sie von uns?</summary>
+              <div class="faq-content">
+                <p>
+                  Typisch 1 bis 4 Wochen. Wir brauchen Logo, Texte, Bilder und
+                  Zugang zur Domain. Fehlt etwas, unterstützen wir bei der
+                  Erstellung.
+                </p>
+              </div>
             </details>
-            <details data-lang="en">
-              <summary>Can the site be expanded later?</summary>
-              <p>Yes, the structure and code are modular and extendable.</p>
+            <details data-lang="en" data-faq-category="process">
+              <summary>How long does delivery take and what do you need from us?</summary>
+              <div class="faq-content">
+                <p>
+                  Typically 1 to 4 weeks. We need your logo, text, images, and
+                  domain access. If something is missing, we help create it.
+                </p>
+              </div>
             </details>
-            <details data-lang="de">
-              <summary>Wie funktioniert Hosting und Support?</summary>
-              <p>
-                Hosting ist inklusive, Support und Updates köennen flexibel
-                gebucht werden.
-              </p>
+            <details data-lang="de" data-faq-category="process">
+              <summary>Wie viele Korrekturrunden sind enthalten?</summary>
+              <div class="faq-content">
+                <p>
+                  Üblicherweise sind zwei Feedbackrunden enthalten. Weitere
+                  Anpassungen sind möglich und werden transparent abgestimmt.
+                </p>
+              </div>
             </details>
-            <details data-lang="en">
-              <summary>How do hosting and support work?</summary>
-              <p>
-                Hosting is included; support and updates are booked as needed.
-              </p>
+            <details data-lang="en" data-faq-category="process">
+              <summary>How many revision rounds are included?</summary>
+              <div class="faq-content">
+                <p>
+                  Typically two feedback rounds are included. Additional
+                  changes are possible and agreed transparently.
+                </p>
+              </div>
+            </details>
+            <details data-lang="de" data-faq-category="process">
+              <summary>Wer schreibt die Texte und liefert Bilder?</summary>
+              <div class="faq-content">
+                <p>
+                  Sie können Inhalte liefern oder wir übernehmen Text, Fotos
+                  oder Bildauswahl. Wir beraten, was für Ihre Branche
+                  funktioniert.
+                </p>
+              </div>
+            </details>
+            <details data-lang="en" data-faq-category="process">
+              <summary>Who provides copy and images?</summary>
+              <div class="faq-content">
+                <p>
+                  You can supply content or we can handle copy, photography, or
+                  image sourcing. We advise what works for your industry.
+                </p>
+              </div>
+            </details>
+            <details data-lang="de" data-faq-category="ownership">
+              <summary>Gehört die Website nach dem Launch uns?</summary>
+              <div class="faq-content">
+                <p>
+                  Ja. Sie behalten volle Kontrolle über Domain, Inhalte und
+                  Dateien. Wir stellen alles so auf, dass Sie jederzeit
+                  wechseln oder selbst weiterführen können.
+                </p>
+              </div>
+            </details>
+            <details data-lang="en" data-faq-category="ownership">
+              <summary>Do we own the website after launch?</summary>
+              <div class="faq-content">
+                <p>
+                  Yes. You keep full control of the domain, content, and files.
+                  We set it up so you can move or self-manage anytime.
+                </p>
+              </div>
+            </details>
+            <details data-lang="de" data-faq-category="ownership">
+              <summary>Können wir die Website später selbst pflegen?</summary>
+              <div class="faq-content">
+                <p>
+                  Ja. Auf Wunsch erhalten Sie ein einfaches CMS oder eine
+                  Einweisung, damit Sie Inhalte eigenständig aktualisieren
+                  können.
+                </p>
+              </div>
+            </details>
+            <details data-lang="en" data-faq-category="ownership">
+              <summary>Can we maintain the website ourselves later?</summary>
+              <div class="faq-content">
+                <p>
+                  Yes. We can provide a simple CMS or a handover session so you
+                  can update content independently.
+                </p>
+              </div>
+            </details>
+            <details data-lang="de" data-faq-category="ownership">
+              <summary>Was passiert, wenn wir die Agentur wechseln?</summary>
+              <div class="faq-content">
+                <p>
+                  Kein Problem. Sie erhalten alle Zugangsdaten und Dateien, und
+                  wir unterstützen auf Wunsch bei der Übergabe.
+                </p>
+              </div>
+            </details>
+            <details data-lang="en" data-faq-category="ownership">
+              <summary>What happens if we change agencies?</summary>
+              <div class="faq-content">
+                <p>
+                  No problem. You receive all access and files, and we can
+                  support a smooth handover if needed.
+                </p>
+              </div>
+            </details>
+            <details data-lang="de" data-faq-category="support">
+              <summary>Wie laufen Änderungen und Support nach dem Go-live?</summary>
+              <div class="faq-content">
+                <p>
+                  Kleine Anpassungen erledigen wir schnell per Mail. Für
+                  laufende Betreuung gibt es flexible Pakete oder Abruf.
+                </p>
+              </div>
+            </details>
+            <details data-lang="en" data-faq-category="support">
+              <summary>How do changes and support work after go-live?</summary>
+              <div class="faq-content">
+                <p>
+                  Small changes are handled quickly by email. Ongoing care is
+                  available via flexible packages or on-demand.
+                </p>
+              </div>
+            </details>
+            <details data-lang="de" data-faq-category="support">
+              <summary>Was passiert bei technischen Problemen oder Ausfällen?</summary>
+              <div class="faq-content">
+                <p>
+                  Wir überwachen die Verfügbarkeit und reagieren bei Störungen
+                  schnell. Auf Wunsch bieten wir Service-Level mit festen
+                  Reaktionszeiten.
+                </p>
+              </div>
+            </details>
+            <details data-lang="en" data-faq-category="support">
+              <summary>What happens if there are technical issues or downtime?</summary>
+              <div class="faq-content">
+                <p>
+                  We monitor availability and respond quickly to issues. If
+                  needed, we offer service levels with defined response times.
+                </p>
+              </div>
+            </details>
+            <details data-lang="de" data-faq-category="support">
+              <summary>Wie schnell können Sie kleine Änderungen umsetzen?</summary>
+              <div class="faq-content">
+                <p>
+                  Kleine Updates erledigen wir meist innerhalb weniger Tage.
+                  Dringende Anpassungen können priorisiert werden.
+                </p>
+              </div>
+            </details>
+            <details data-lang="en" data-faq-category="support">
+              <summary>How fast can you handle small updates?</summary>
+              <div class="faq-content">
+                <p>
+                  Small updates are usually done within a few days. Urgent
+                  changes can be prioritized.
+                </p>
+              </div>
+            </details>
+            <details data-lang="de" data-faq-category="seo">
+              <summary>Wie sieht es mit SEO, Tracking und Datenschutz aus?</summary>
+              <div class="faq-content">
+                <p>
+                  Basis-SEO ist inklusive. Wir richten Analytics nach Wunsch
+                  ein und achten auf DSGVO/DSG-Standards inkl. Cookie-Hinweis.
+                </p>
+              </div>
+            </details>
+            <details data-lang="en" data-faq-category="seo">
+              <summary>What about SEO, tracking, and privacy?</summary>
+              <div class="faq-content">
+                <p>
+                  Basic SEO is included. We can set up analytics and follow
+                  GDPR/Swiss privacy requirements including a cookie notice.
+                </p>
+              </div>
+            </details>
+            <details data-lang="de" data-faq-category="seo">
+              <summary>Unterstützen Sie Google Business Profile und lokale Listings?</summary>
+              <div class="faq-content">
+                <p>
+                  Ja. Wir helfen bei Einrichtung oder Optimierung Ihres
+                  Google-Profils und können wichtige lokale Verzeichnisse
+                  anlegen oder prüfen.
+                </p>
+              </div>
+            </details>
+            <details data-lang="en" data-faq-category="seo">
+              <summary>Do you help with Google Business Profile and local listings?</summary>
+              <div class="faq-content">
+                <p>
+                  Yes. We can set up or optimize your Google profile and help
+                  with relevant local directories.
+                </p>
+              </div>
+            </details>
+            <details data-lang="de" data-faq-category="seo">
+              <summary>Wie messen wir den Erfolg der Website?</summary>
+              <div class="faq-content">
+                <p>
+                  Wir definieren gemeinsam Ziele wie Anfragen, Anrufe oder
+                  Reservierungen und richten Tracking datenschutzkonform ein.
+                </p>
+              </div>
+            </details>
+            <details data-lang="en" data-faq-category="seo">
+              <summary>How do we measure website success?</summary>
+              <div class="faq-content">
+                <p>
+                  We define goals such as inquiries, calls, or bookings and set
+                  up privacy-compliant tracking.
+                </p>
+              </div>
             </details>
           </div>
 
