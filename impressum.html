@@ -7,6 +7,7 @@
     <meta name="description" content="Impressum und Datenschutz von eweb IT." />
     <title>Impressum | eweb IT</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="dark.svg" data-favicon />
     <script defer src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +19,14 @@
 
     <header class="site-header">
         <div class="container header-inner">
-            <a class="logo bungee-shade-regular" href="./index.html" aria-label="ewebIT">eweb IT</a>
+            <a class="logo bungee-shade-regular" href="./index.html" aria-label="ewebIT">
+                <img class="logo-mark is-light" src="light.svg" alt="" aria-hidden="true" />
+                <img class="logo-mark is-dark" src="dark.svg" alt="" aria-hidden="true" />
+                <span>eweb IT</span>
+            </a>
             <div class="header-actions">
                 <div class="lang-switch" role="group" aria-label="Sprachumschaltung">
+                    <span class="lang-indicator" aria-hidden="true"></span>
                     <button type="button" class="lang-btn" data-lang-toggle="de" aria-pressed="true"
                         aria-label="Deutsch">DE</button>
                     <button type="button" class="lang-btn" data-lang-toggle="en" aria-pressed="false"

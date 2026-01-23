@@ -9,6 +9,7 @@
     />
     <title>eweb IT</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="dark.svg" data-favicon />
     <script defer src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +23,11 @@
 
     <header class="site-header" id="top">
       <div class="container header-inner">
-        <a class="logo bungee-shade-regular" href="./index.html" aria-label="ewebIT">eweb IT</a>
+        <a class="logo bungee-shade-regular" href="./index.html" aria-label="ewebIT">
+          <img class="logo-mark is-light" src="light.svg" alt="" aria-hidden="true" />
+          <img class="logo-mark is-dark" src="dark.svg" alt="" aria-hidden="true" />
+          <span>eweb IT</span>
+        </a>
         <nav class="site-nav" aria-label="Hauptnavigation">
           <a href="#leistungen">Leistungen</a>
           <a href="#pakete">Pakete</a>
@@ -603,7 +608,6 @@
       <section class="section" id="faq">
         <div class="container">
           <div class="section-header centered" data-lang="de">
-            <p class="eyebrow">Häufig gestellte Fragen</p>
             <h2 class="section-title">Häufig gestellte Fragen</h2>
             <p class="section-copy">
               Durchstöbern Sie unsere FAQ für Antworten auf alles, was Sie über
@@ -612,7 +616,6 @@
             </p>
           </div>
           <div class="section-header centered" data-lang="en">
-            <p class="eyebrow">Frequently Asked Questions</p>
             <h2 class="section-title">Frequently Asked Questions</h2>
             <p class="section-copy">
               Browse our FAQ for answers to everything you would like to know

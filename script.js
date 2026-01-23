@@ -2,6 +2,7 @@ const buttons = document.querySelectorAll("[data-lang-toggle]");
 const langSwitch = document.querySelector(".lang-switch");
 const langIndicator = document.querySelector(".lang-indicator");
 const themeToggle = document.querySelector("[data-theme-toggle]");
+const favicon = document.querySelector("[data-favicon]");
 const storedTheme = localStorage.getItem("ewebit-theme");
 const storedLang = localStorage.getItem("ewebit-lang");
 
@@ -62,6 +63,9 @@ function setTheme(theme) {
       "aria-label",
       isDark ? "Light Mode einschalten" : "Dark Mode einschalten"
     );
+  }
+  if (favicon) {
+    favicon.setAttribute("href", theme === "dark" ? "dark.svg" : "light.svg");
   }
   localStorage.setItem("ewebit-theme", theme);
 }

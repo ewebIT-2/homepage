@@ -26,9 +26,9 @@ body[data-theme="dark"] {
   --card: #141b22;
   --text: #eef1f4;
   --muted: #c0c7d1;
-  --accent: #c9a227;
-  --accent-strong: #e2b84a;
-  --accent-soft: rgba(201, 162, 39, 0.25);
+  --accent: #f6d44a;
+  --accent-strong: #f6d44a;
+  --accent-soft: rgba(246, 212, 74, 0.25);
   --accent-ring: rgba(246, 212, 74, 0.55);
   --highlight: #f6d44a;
   --border: rgba(255, 255, 255, 0.08);
@@ -61,7 +61,7 @@ body {
 body[data-theme="dark"] {
   background: radial-gradient(
       circle at top,
-      rgba(201, 162, 39, 0.06),
+      rgba(246, 212, 74, 0.06),
       transparent 45%
     ),
     linear-gradient(180deg, #0b0f13 0%, #0c0f12 50%, #0a0d10 100%);
@@ -200,10 +200,36 @@ body[data-theme="dark"] .site-header {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text);
+  border-bottom: none;
+}
+
+.logo-mark {
+  width: 64px;
+  height: 64px;
+  display: block;
+}
+
+.logo-mark.is-light {
+  display: block;
+}
+
+.logo-mark.is-dark {
+  display: none;
+}
+
+body[data-theme="dark"] .logo-mark.is-light {
+  display: none;
+}
+
+body[data-theme="dark"] .logo-mark.is-dark {
+  display: block;
 }
 
 .site-nav {
