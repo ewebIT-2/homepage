@@ -1,13 +1,59 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ewebIT - kostengünstige, professionelle Websites für kleine Unternehmen in der Schweiz."
+      content="Webdesign Studio Zürich - günstige, professionelle Websites für KMU in der Schweiz. Handcoded, SEO-stark, mit Hosting & Wartung inklusive."
+      data-i18n-attr="content:meta.description"
     />
-    <title>EWEB IT</title>
+    <meta
+      name="keywords"
+      content="Webdesign Studio Zürich, Günstige Websites Schweiz, Webdesign Agentur Zürich, Website erstellen lassen, KMU Webseite"
+      data-i18n-attr="content:meta.keywords"
+    />
+    <title data-i18n="meta.title">EWEB IT | Webdesign Studio Zürich - Professionelle Websites für Schweizer KMU</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "EWEB IT",
+      "description": "Webdesign Studio Zürich für günstige, professionelle Websites in der Schweiz. Handcoded, SEO-stark und mit Hosting & Wartung aus einer Hand.",
+      "url": "https://ewebit.ch",
+      "email": "hallo@ewebit.ch",
+      "areaServed": [
+        {"@type": "City", "name": "Zürich"},
+        {"@type": "City", "name": "Bern"},
+        {"@type": "City", "name": "Basel"},
+        {"@type": "City", "name": "Luzern"},
+        {"@type": "City", "name": "Winterthur"},
+        {"@type": "Country", "name": "Schweiz"}
+      ],
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Webdesign Services",
+        "itemListElement": [
+          {
+            "@type": "Service",
+            "name": "Onepager Website",
+            "description": "Professionelle Onepage-Website mit klarer Struktur, Kontaktformular und Basis-SEO"
+          },
+          {
+            "@type": "Service",
+            "name": "Business Website",
+            "description": "Mehrere Unterseiten, individuelles Layout und Content-Integration"
+          },
+          {
+            "@type": "Service",
+            "name": "Custom Website",
+            "description": "Massgeschneiderte Webseiten für komplexe Anforderungen mit langfristiger Betreuung"
+          }
+        ]
+      }
+    }
+    </script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="favicon.svg" data-favicon />
     <script defer src="script.js"></script>
@@ -19,7 +65,7 @@
     />
   </head>
   <body data-lang="de" data-theme="dark">
-    <a class="skip-link" href="#kontakt">Zum Inhalt springen</a>
+    <a class="skip-link" href="#kontakt" data-i18n="nav.skip">Zum Inhalt springen</a>
 
     <header class="site-header" id="top">
       <div class="container header-inner">
@@ -28,22 +74,23 @@
           <img class="logo-mark is-dark" src="dark.svg" alt="" aria-hidden="true" />
           <span>eweb IT</span>
         </a>
-        <nav class="site-nav" aria-label="Hauptnavigation">
-          <a href="#leistungen">Leistungen</a>
-          <a href="#pakete">Pakete</a>
-          <a href="#ablauf">Ablauf</a>
-          <a href="#faq">FAQ</a>
-          <a href="#kontakt">Kontakt</a>
+        <nav class="site-nav" aria-label="" data-i18n-attr="aria-label:nav.aria">
+          <a href="#warum-wir" data-i18n="nav.why">Warum wir</a>
+          <a href="#pakete" data-i18n="nav.packages">Pakete</a>
+          <a href="#ablauf" data-i18n="nav.process">Ablauf</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+          <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
         </nav>
         <div class="header-actions">
-          <div class="lang-switch" role="group" aria-label="Sprachumschaltung">
+          <div class="lang-switch" role="group" aria-label="" data-i18n-attr="aria-label:lang.aria">
             <span class="lang-indicator" aria-hidden="true"></span>
             <button
               type="button"
               class="lang-btn"
               data-lang-toggle="de"
               aria-pressed="true"
-              aria-label="Deutsch"
+              aria-label=""
+              data-i18n-attr="aria-label:lang.de"
             >
               DE
             </button>
@@ -52,7 +99,8 @@
               class="lang-btn"
               data-lang-toggle="en"
               aria-pressed="false"
-              aria-label="English"
+              aria-label=""
+              data-i18n-attr="aria-label:lang.en"
             >
               EN
             </button>
@@ -60,11 +108,11 @@
           <button
             type="button"
             class="theme-toggle"
-            aria-label="Light Mode einschalten"
+            aria-label=""
             aria-pressed="true"
             data-theme-toggle
           >
-            <span class="sr-only">Theme wechseln</span>
+            <span class="sr-only" data-i18n="theme.toggle">Theme wechseln</span>
             <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="4.5"></circle>
               <line x1="12" y1="2" x2="12" y2="5"></line>
@@ -87,19 +135,17 @@
     <main>
       <section class="hero">
         <div class="container hero-inner">
-          <div class="hero-text" data-lang="de">
-            <p class="eyebrow">Schweizer Freelancing-Team</p>
-            <h1>
-              Professionelle Websites,
-              <span class="highlight">schnell online</span> und kostenünstig.
+          <div class="hero-text">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Webdesign Agentur Zürich</p>
+            <h1 data-i18n="hero.title" data-i18n-html>
+              Mehr Kunden gewinnen mit einer
+              <span class="highlight">professionellen Schweizer Website</span>
             </h1>
-            <p class="lead">
-              Wir planen, designen und entwickeln moderne Webseiten für
-              Unternehmen und Privatpersonen. Hosting und laufende Betreuung
-              sind inklusive.
+            <p class="lead" data-i18n="hero.lead">
+              Ihre neue Website in nur 4 Wochen – inklusive Hosting, Wartung und persönlichem Support. Keine Technik-Sorgen, nur Ergebnisse.
             </p>
             <p class="contact-line">
-              <a class="split email-split" href="mailto:hallo@ewebit.ch">
+              <a class="split email-split cta-primary" href="mailto:hallo@ewebit.ch">
                 <span class="split__bg"></span>
                 <span class="split__fg">
                   <span class="split__icon" aria-hidden="true">
@@ -108,32 +154,7 @@
                       <path d="m4 7 8 6 8-6"></path>
                     </svg>
                   </span>
-                  <span>hallo@ewebit.ch</span>
-                </span>
-              </a>
-            </p>
-          </div>
-          <div class="hero-text" data-lang="en">
-            <p class="eyebrow">Swiss freelancing team</p>
-            <h1>
-              Professional websites,
-              <span class="highlight">launched quickly</span> and affordable.
-            </h1>
-            <p class="lead">
-              We plan, design, and build modern sites for businesses and
-              individuals. Hosting and ongoing care are included.
-            </p>
-            <p class="contact-line">
-              <a class="split email-split" href="mailto:hallo@ewebit.ch">
-                <span class="split__bg"></span>
-                <span class="split__fg">
-                  <span class="split__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                      <path d="M4 6h16v12H4z"></path>
-                      <path d="m4 7 8 6 8-6"></path>
-                    </svg>
-                  </span>
-                  <span>hallo@ewebit.ch</span>
+                  <span data-i18n="hero.cta">Projekt starten</span>
                 </span>
               </a>
             </p>
@@ -146,233 +167,85 @@
         </div>
       </section>
 
-      <section class="section" id="warum">
+      <section class="section trust-section" id="warum-wir">
         <div class="container">
-          <div class="section-header centered" data-lang="de">
-            <p class="eyebrow">Was wir tun</p>
-            <h2 class="section-title">
-              Machen Sie sich nie wieder Sorgen um Ihre Website
-            </h2>
-            <p class="section-copy">
-              Bei eweb IT Web Designs spezialisieren wir uns auf Webdesign und
-              Entwicklung für kleine Unternehmen in der ganzen Schweiz. Jede
-              Zeile Code wird von Hand geschrieben, damit Performance und Google
-              stimmen und so mehr Kunden und Umsatz entstehen. Wir übernehmen
-              auch die laufenden Anpassungen und lassen Sie nie im Stich. Unser
-              Ziel ist eine langfristige Zusammenarbeit, in der Ihr Unternehmen
-              nachhaltig wächst.
+          <div class="section-header centered">
+            <p class="eyebrow" data-i18n="why.eyebrow">Warum eweb IT</p>
+            <h2 class="section-title" data-i18n="why.title">Machen Sie sich nie wieder Sorgen um Ihre Website</h2>
+            <p class="section-copy" data-i18n="why.copy">
+              Wir bauen leistungsstarke Websites für Schweizer KMU, inkl. Hosting, Wartung und persönlichem Support. Handcoded für Performance, klar strukturiert für mehr Anfragen.
             </p>
           </div>
-          <div class="section-header centered" data-lang="en">
-            <p class="eyebrow">What We Do</p>
-            <h2 class="section-title">
-              Never Worry About Your Website Ever Again
-            </h2>
-            <p class="section-copy">
-              At eweb IT Web Designs, we specialize in small business web design
-              and development for clients anywhere in Switzerland. Every line
-              of code is written by hand to ensure the best performance and make
-              Google happy, which helps bring in more customers to your site and
-              bring more revenue to your business. We also manage the edits for
-              you and will never leave you high and dry. Our goal is to create
-              long term relationships with our clients and see them grow over
-              time.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section services-section" id="leistungen">
-        <div class="container">
-          <h2 class="sr-only" data-lang="de">Leistungen</h2>
-          <h2 class="sr-only" data-lang="en">Services</h2>
-        </div>
-        <div class="services-grid-wrap">
-          <div class="list-grid services-grid">
-            <article class="service-card" data-lang="de">
-              <div class="service-icon" aria-hidden="true">
+          <div class="trust-grid">
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
-                  <rect x="6" y="2.5" width="12" height="19" rx="2"></rect>
-                  <line x1="9" y1="5.5" x2="15" y2="5.5"></line>
-                  <circle cx="12" cy="18.5" r="1.2"></circle>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M9 12l2 2 4-4"></path>
                 </svg>
               </div>
-              <h3>Mobile-First Design</h3>
-              <p>
-                Wir starten auf dem Smartphone, damit Struktur und CTAs sitzen.
-                Danach skalieren wir sauber auf Tablet und Desktop.
-              </p>
-            </article>
-            <article class="service-card" data-lang="en">
-              <div class="service-icon" aria-hidden="true">
+              <h3 data-i18n="why.cards.swiss.title">100% Schweiz</h3>
+              <p data-i18n="why.cards.swiss.text">Strategie, Entwicklung und Hosting in der Schweiz. DSG-konform und mit kurzen Wegen.</p>
+            </div>
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
-                  <rect x="6" y="2.5" width="12" height="19" rx="2"></rect>
-                  <line x1="9" y1="5.5" x2="15" y2="5.5"></line>
-                  <circle cx="12" cy="18.5" r="1.2"></circle>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M12 8v4"></path>
+                  <path d="M12 16h.01"></path>
                 </svg>
               </div>
-              <h3>Mobile-First Design</h3>
-              <p>
-                We start on mobile so structure and CTAs are locked in first.
-                Then we scale cleanly to tablet and desktop.
-              </p>
-            </article>
-            <article class="service-card" data-lang="de">
-              <div class="service-icon" aria-hidden="true">
+              <h3 data-i18n="why.cards.maintenance.title">Full-Service Wartung &amp; Hosting</h3>
+              <p data-i18n="why.cards.maintenance.text">Updates, Backups, Monitoring und Support inklusive. Sie kümmern sich ums Business.</p>
+            </div>
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
-                  <path d="M12 21s6-6.2 6-10.5a6 6 0 1 0-12 0C6 14.8 12 21 12 21z"></path>
-                  <circle cx="12" cy="10.5" r="2.3"></circle>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 6v6l4 2"></path>
                 </svg>
               </div>
-              <h3>Based in Switzerland</h3>
-              <p>
-                Wir arbeiten in der Schweiz und kennen lokale Erwartungen.
-                Direkte Kommunikation und schnelle Wege sind garantiert.
-              </p>
-            </article>
-            <article class="service-card" data-lang="en">
-              <div class="service-icon" aria-hidden="true">
+              <h3 data-i18n="why.cards.response.title">Schnelle Reaktion</h3>
+              <p data-i18n="why.cards.response.text">Kurze Antwortzeiten und direkte Umsetzung. Keine Tickets, keine Warteschleifen.</p>
+            </div>
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
-                  <path d="M12 21s6-6.2 6-10.5a6 6 0 1 0-12 0C6 14.8 12 21 12 21z"></path>
-                  <circle cx="12" cy="10.5" r="2.3"></circle>
+                  <path d="M3 3v18h18"></path>
+                  <path d="M18 17V9"></path>
+                  <path d="M13 17V5"></path>
+                  <path d="M8 17v-3"></path>
                 </svg>
               </div>
-              <h3>Based in Switzerland</h3>
-              <p>
-                We are based in Switzerland and know local expectations.
-                Direct communication and fast turnaround are standard.
-              </p>
-            </article>
-            <article class="service-card" data-lang="de">
-              <div class="service-icon" aria-hidden="true">
+              <h3 data-i18n="why.cards.performance.title">Performance &amp; Sichtbarkeit</h3>
+              <p data-i18n="why.cards.performance.text">Schnelle Ladezeiten, sauberes SEO und klare Inhalte für bessere Rankings.</p>
+            </div>
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
                   <rect x="3" y="6" width="11" height="8" rx="1.5"></rect>
                   <rect x="14.5" y="4" width="6.5" height="12" rx="1.4"></rect>
                   <line x1="6" y1="16.5" x2="18" y2="16.5"></line>
                 </svg>
               </div>
-              <h3>Voll responsiv</h3>
-              <p>
-                Jede Seite passt sich jeder Bildschirmgrösse an und bleibt
-                stabil. Sauberer Code sorgt für ruhige Darstellung.
-              </p>
-            </article>
-            <article class="service-card" data-lang="en">
-              <div class="service-icon" aria-hidden="true">
+              <h3 data-i18n="why.cards.design.title">Conversion-ready Design</h3>
+              <p data-i18n="why.cards.design.text">Mobile-first, klar strukturiert und auf Anfragen optimiert.</p>
+            </div>
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
-                  <rect x="3" y="6" width="11" height="8" rx="1.5"></rect>
-                  <rect x="14.5" y="4" width="6.5" height="12" rx="1.4"></rect>
-                  <line x1="6" y1="16.5" x2="18" y2="16.5"></line>
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
                 </svg>
               </div>
-              <h3>Fully Responsive</h3>
-              <p>
-                Every page adapts to any screen size and stays stable. Clean
-                code keeps the layout calm and clear.
-              </p>
-            </article>
-            <article class="service-card" data-lang="de">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="7"></circle>
-                  <line x1="12" y1="12" x2="16.5" y2="9.5"></line>
-                  <line x1="12" y1="4" x2="12" y2="2"></line>
-                  <line x1="4" y1="12" x2="2" y2="12"></line>
-                  <line x1="20" y1="12" x2="22" y2="12"></line>
-                </svg>
-              </div>
-              <h3>Performance & Speed</h3>
-              <p>
-                Wir optimieren Bilder, CSS und Skripte für kurze Ladezeiten.
-                Schnelle Seiten verbessern Rankings und Conversions.
-              </p>
-            </article>
-            <article class="service-card" data-lang="en">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="7"></circle>
-                  <line x1="12" y1="12" x2="16.5" y2="9.5"></line>
-                  <line x1="12" y1="4" x2="12" y2="2"></line>
-                  <line x1="4" y1="12" x2="2" y2="12"></line>
-                  <line x1="20" y1="12" x2="22" y2="12"></line>
-                </svg>
-              </div>
-              <h3>Optimized Page Speed</h3>
-              <p>
-                We optimize images, CSS, and scripts for fast load times. Speed
-                improves rankings and conversions.
-              </p>
-            </article>
-            <article class="service-card" data-lang="de">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6 10v-2.5a6 6 0 0 1 12 0V10"></path>
-                  <rect x="4.5" y="10" width="15" height="10" rx="2"></rect>
-                  <circle cx="12" cy="15" r="1.2"></circle>
-                </svg>
-              </div>
-              <h3>Hosting & Sicherheit</h3>
-              <p>
-                Zuverlässiges Hosting mit SSL, Backups und Monitoring inklusive.
-                Wir halten Ihre Seite stabil und geschützt.
-              </p>
-            </article>
-            <article class="service-card" data-lang="en">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6 10v-2.5a6 6 0 0 1 12 0V10"></path>
-                  <rect x="4.5" y="10" width="15" height="10" rx="2"></rect>
-                  <circle cx="12" cy="15" r="1.2"></circle>
-                </svg>
-              </div>
-              <h3>Hosting & Security</h3>
-              <p>
-                Reliable hosting with SSL, backups, and monitoring included. We
-                keep your site stable and secure.
-              </p>
-            </article>
-            <article class="service-card" data-lang="de">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6 4h8l4 4v12H6z"></path>
-                  <path d="M9 14h6"></path>
-                  <path d="M9 10h4"></path>
-                </svg>
-              </div>
-              <h3>Wartung & Updates</h3>
-              <p>
-                Wir übernehmen Anpassungen, neue Inhalte und Sicherheitschecks
-                laufend. So bleibt Ihre Website aktuell.
-              </p>
-            </article>
-            <article class="service-card" data-lang="en">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6 4h8l4 4v12H6z"></path>
-                  <path d="M9 14h6"></path>
-                  <path d="M9 10h4"></path>
-                </svg>
-              </div>
-              <h3>Maintenance & Updates</h3>
-              <p>
-                We handle changes, new content, and security checks
-                continuously. Your website stays current.
-              </p>
-            </article>
+              <h3 data-i18n="why.cards.pricing.title">Transparente Preise</h3>
+              <p data-i18n="why.cards.pricing.text">Klare Pakete, definierte Leistungen und keine Überraschungen.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="container">
-          <div class="section-footer" data-lang="de">
-            <p class="section-subtitle">
-              Alles, was Sie brauchen, um online
-              <span class="highlight">professionell</span> aufzutreten.
-            </p>
-          </div>
-          <div class="section-footer" data-lang="en">
-            <p class="section-subtitle">
-              Everything you need for a
-              <span class="highlight">professional</span> online presence.
+          <div class="section-footer">
+            <p class="section-subtitle" data-i18n="why.footer" data-i18n-html>
+              Vertrauen Sie auf <span class="highlight">Schweizer Handarbeit</span>.
             </p>
           </div>
         </div>
@@ -380,75 +253,118 @@
 
       <section class="section" id="pakete">
         <div class="container">
-          <div class="section-header" data-lang="de">
-            <h2>Pakete & Preise</h2>
+          <div class="section-header centered">
+            <h2 class="section-title section-title--xl" data-i18n="pricing.title">Pakete &amp; Preise</h2>
           </div>
-          <div class="section-header" data-lang="en">
-            <h2>Packages & pricing</h2>
+
+          <div class="pricing-switch" role="group" aria-label="" data-i18n-attr="aria-label:pricing.switch">
+            <span class="pricing-indicator" aria-hidden="true"></span>
+            <button
+              type="button"
+              class="pricing-btn"
+              data-pricing-toggle="monthly"
+              aria-pressed="true"
+              data-i18n="pricing.monthly"
+            >
+              Monatlich
+            </button>
+            <button
+              type="button"
+              class="pricing-btn"
+              data-pricing-toggle="lump-sum"
+              aria-pressed="false"
+              data-i18n="pricing.lump"
+            >
+              Einmalzahlung
+            </button>
           </div>
-          <div class="package-grid">
-            <article class="package-card" data-lang="de">
-              <h3>Onepager</h3>
-              <p class="price">ab CHF ___</p>
-              <ul>
-                <li>1 Seite, klare Struktur</li>
-                <li>Kontakt & CTA-Text</li>
-                <li>Basis-SEO & Performance</li>
-              </ul>
-            </article>
-            <article class="package-card" data-lang="en">
-              <h3>One-pager</h3>
-              <p class="price">from CHF ___</p>
-              <ul>
-                <li>Single page, clear structure</li>
-                <li>Contact & CTA text</li>
-                <li>Basic SEO & performance</li>
-              </ul>
-            </article>
-            <article class="package-card" data-lang="de">
-              <h3>Business</h3>
-              <p class="price">ab CHF ___</p>
-              <ul>
-                <li>Mehrere Unterseiten</li>
-                <li>Individuelles Layout</li>
-                <li>Content-Integration</li>
-              </ul>
-            </article>
-            <article class="package-card" data-lang="en">
-              <h3>Business</h3>
-              <p class="price">from CHF ___</p>
-              <ul>
-                <li>Multiple pages</li>
-                <li>Custom layout</li>
-                <li>Content integration</li>
-              </ul>
-            </article>
-            <article class="package-card" data-lang="de">
-              <h3>Individuell</h3>
-              <p class="price">nach Absprache</p>
-              <ul>
-                <li>Komplexe Anforderungen</li>
-                <li>Integrationen & Beratung</li>
-                <li>Langfristige Betreuung</li>
-              </ul>
-            </article>
-            <article class="package-card" data-lang="en">
-              <h3>Custom</h3>
-              <p class="price">in consultation</p>
-              <ul>
-                <li>Complex requirements</li>
-                <li>Integrations & consulting</li>
-                <li>Long-term support</li>
-              </ul>
-            </article>
+
+          <div id="pricing-monthly" class="pricing-grid--monthly">
+            <p class="pricing-context" data-i18n="pricing.contextMonthly">
+              Flexible monatliche Betreuung inklusive Hosting und Wartung.
+            </p>
+            <div class="package-grid">
+              <article class="package-card">
+                <h3 data-i18n="pricing.business.name">Business</h3>
+                <p class="price" data-i18n="pricing.business.priceMonthly">ab CHF ___/Mt.</p>
+                <ul>
+                  <li data-i18n="pricing.business.item1">Mehrere Unterseiten</li>
+                  <li data-i18n="pricing.business.item2">Individuelles Layout</li>
+                  <li data-i18n="pricing.business.item3">Content-Integration</li>
+                  <li data-i18n="pricing.business.item4">Hosting &amp; Wartung inkl.</li>
+                </ul>
+              </article>
+              <article class="package-card package-card--featured">
+                <span class="package-badge" data-i18n="pricing.badge">Beliebt</span>
+                <h3 data-i18n="pricing.onepager.name">Onepager</h3>
+                <p class="price" data-i18n="pricing.onepager.priceMonthly">ab CHF ___/Mt.</p>
+                <ul>
+                  <li data-i18n="pricing.onepager.item1">1 Seite, klare Struktur</li>
+                  <li data-i18n="pricing.onepager.item2">Kontakt &amp; CTA-Text</li>
+                  <li data-i18n="pricing.onepager.item3">Basis-SEO &amp; Performance</li>
+                  <li data-i18n="pricing.onepager.item4">Hosting &amp; Wartung inkl.</li>
+                </ul>
+              </article>
+              <article class="package-card">
+                <h3 data-i18n="pricing.custom.name">Individuell</h3>
+                <p class="price" data-i18n="pricing.custom.priceMonthly">nach Absprache</p>
+                <ul>
+                  <li data-i18n="pricing.custom.item1">Komplexe Anforderungen</li>
+                  <li data-i18n="pricing.custom.item2">Integrationen &amp; Beratung</li>
+                  <li data-i18n="pricing.custom.item3">Langfristige Betreuung</li>
+                </ul>
+              </article>
+            </div>
           </div>
-          <div class="section-note" data-lang="de">
-            <p>
+
+          <div id="pricing-lump-sum" class="pricing-grid--lump-sum is-hidden">
+            <p class="pricing-context" data-i18n="pricing.contextLump">
+              Einmalige Projektgebühr für Design und Entwicklung.
+            </p>
+            <div class="package-grid">
+              <article class="package-card">
+                <h3 data-i18n="pricing.business.name">Business</h3>
+                <p class="price" data-i18n="pricing.business.priceLump">ab CHF ___</p>
+                <ul>
+                  <li data-i18n="pricing.business.item1">Mehrere Unterseiten</li>
+                  <li data-i18n="pricing.business.item2">Individuelles Layout</li>
+                  <li data-i18n="pricing.business.item3">Content-Integration</li>
+                  <li data-i18n="pricing.business.item5">Hosting separat</li>
+                </ul>
+              </article>
+              <article class="package-card package-card--featured">
+                <span class="package-badge" data-i18n="pricing.badge">Beliebt</span>
+                <h3 data-i18n="pricing.onepager.name">Onepager</h3>
+                <p class="price" data-i18n="pricing.onepager.priceLump">ab CHF ___</p>
+                <ul>
+                  <li data-i18n="pricing.onepager.item1">1 Seite, klare Struktur</li>
+                  <li data-i18n="pricing.onepager.item2">Kontakt &amp; CTA-Text</li>
+                  <li data-i18n="pricing.onepager.item3">Basis-SEO &amp; Performance</li>
+                  <li data-i18n="pricing.onepager.item5">Hosting separat</li>
+                </ul>
+              </article>
+              <article class="package-card">
+                <h3 data-i18n="pricing.custom.name">Individuell</h3>
+                <p class="price" data-i18n="pricing.custom.priceLump">nach Absprache</p>
+                <ul>
+                  <li data-i18n="pricing.custom.item1">Komplexe Anforderungen</li>
+                  <li data-i18n="pricing.custom.item2">Integrationen &amp; Beratung</li>
+                  <li data-i18n="pricing.custom.item3">Langfristige Betreuung</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+
+          <p class="pricing-disclaimer" data-i18n="pricing.disclaimer">
+            Hinweis: Das passende Paket wird nach einem gemeinsamen Beratungsgespräch individuell auf Ihre Bedürfnisse abgestimmt.
+          </p>
+
+          <div class="section-note">
+            <p data-i18n="pricing.addons">
               Add-ons: Zusätzliche Seiten, Content-Erstellung, Bildbearbeitung.
             </p>
-            <p>Modelle: Einmalzahlung + Hosting oder monatliche Zahlung.</p>
             <div class="quote-block">
-              <h3>Für ein Angebot schreiben Sie uns</h3>
+              <h3 data-i18n="pricing.quote">Für ein Angebot schreiben Sie uns</h3>
               <a class="split email-split" href="mailto:hallo@ewebit.ch">
                 <span class="split__bg"></span>
                 <span class="split__fg">
@@ -463,468 +379,241 @@
               </a>
             </div>
           </div>
-          <div class="section-note" data-lang="en">
-            <p>Add-ons: Additional pages, content creation, image editing.</p>
-            <p>Models: One-time payment + hosting or monthly fee.</p>
-            <div class="quote-block">
-              <h3>For a quote</h3>
-              <a class="split email-split" href="mailto:hallo@ewebit.ch">
-                <span class="split__bg"></span>
-                <span class="split__fg">
-                  <span class="split__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                      <path d="M4 6h16v12H4z"></path>
-                      <path d="m4 7 8 6 8-6"></path>
-                    </svg>
-                  </span>
-                  <span>hallo@ewebit.ch</span>
-                </span>
-              </a>
-            </div>
-          </div>
+        </div>
       </section>
 
-    <section class="section process" id="ablauf">
-      <div class="container">
-        <div class="process-layout">
-          <div class="process-intro">
-            <span class="process-badge" data-lang="de">Schnelle Umsetzung</span>
-            <span class="process-badge" data-lang="en">Fast delivery</span>
-            <h2 class="process-title" data-lang="de">Webseite in 4 Wochen</h2>
-            <h2 class="process-title" data-lang="en">Website in 4 weeks</h2>
-            <p class="process-lead" data-lang="de">Ein klarer 4‑Wochen‑Plan – von Konzept bis Go‑Live.</p>
-            <p class="process-lead" data-lang="en">A clear 4-week plan from concept to go-live.</p>
-            <a class="process-cta" href="#kontakt" data-lang="de">Kostenlosen Check buchen</a>
-            <a class="process-cta" href="#kontakt" data-lang="en">Book a free check</a>
-            <p class="process-note" data-lang="de">30 Minuten. Keine Verpflichtung. Keine Kosten.</p>
-            <p class="process-note" data-lang="en">30 minutes. No obligation. No cost.</p>
-          </div>
-          <div class="process-timeline">
-            <div class="process-item">
-              <div class="process-tag">
-                <span data-lang="de">Woche</span>
-                <span data-lang="en">Week</span>
-                <strong>1</strong>
-              </div>
-              <div class="process-card">
-                <div class="process-card-header">
-                  <h3 data-lang="de">Kickoff & Strategie</h3>
-                  <h3 data-lang="en">Kickoff & strategy</h3>
-                  <span class="process-check" aria-hidden="true">
-                    <svg viewBox="0 0 16 12" aria-hidden="true" focusable="false">
-                      <path d="M1 7l4 4L15 1" />
-                    </svg>
-                  </span>
+      <section class="section process" id="ablauf">
+        <div class="container">
+          <div class="process-layout">
+            <div class="process-intro">
+              <span class="process-badge" data-i18n="process.badge">Schnelle Umsetzung</span>
+              <h2 class="process-title" data-i18n="process.title">Webseite in 4 Wochen</h2>
+              <p class="process-lead" data-i18n="process.lead">Ein klarer 4‑Wochen‑Plan – von Konzept bis Go‑Live.</p>
+              <a class="process-cta" href="#kontakt" data-i18n="process.cta">Kostenlosen Check buchen</a>
+              <p class="process-note" data-i18n="process.note">30 Minuten. Keine Verpflichtung. Keine Kosten.</p>
+            </div>
+            <div class="process-timeline">
+              <div class="process-item">
+                <div class="process-tag">
+                  <span data-i18n="process.week">Woche</span>
+                  <strong>1</strong>
                 </div>
-                <p data-lang="de">Ziele, Zielgruppe, Seitenstruktur und Inhalte klären. Zugriff auf Logo, Bilder, Texte.</p>
-                <p data-lang="en">Align goals, audience, site structure, and content. Collect logo, images, copy.</p>
+                <div class="process-card">
+                  <div class="process-card-header">
+                    <h3 data-i18n="process.step1.title">Kickoff &amp; Strategie</h3>
+                    <span class="process-check" aria-hidden="true">
+                      <svg viewBox="0 0 16 12" aria-hidden="true" focusable="false">
+                        <path d="M1 7l4 4L15 1" />
+                      </svg>
+                    </span>
+                  </div>
+                  <p data-i18n="process.step1.text">Ziele, Zielgruppe, Seitenstruktur und Inhalte klären. Zugriff auf Logo, Bilder, Texte.</p>
+                </div>
+              </div>
+              <div class="process-item">
+                <div class="process-tag">
+                  <span data-i18n="process.week">Woche</span>
+                  <strong>2</strong>
+                </div>
+                <div class="process-card">
+                  <div class="process-card-header">
+                    <h3 data-i18n="process.step2.title">Design &amp; Inhalte</h3>
+                    <span class="process-check" aria-hidden="true">
+                      <svg viewBox="0 0 16 12" aria-hidden="true" focusable="false">
+                        <path d="M1 7l4 4L15 1" />
+                      </svg>
+                    </span>
+                  </div>
+                  <p data-i18n="process.step2.text">Wireframes, Designrichtung, erste Entwürfe. Feedbackrunde und Anpassungen.</p>
+                </div>
+              </div>
+              <div class="process-item">
+                <div class="process-tag">
+                  <span data-i18n="process.week">Woche</span>
+                  <strong>3</strong>
+                </div>
+                <div class="process-card">
+                  <div class="process-card-header">
+                    <h3 data-i18n="process.step3.title">Umsetzung &amp; Technik</h3>
+                    <span class="process-check" aria-hidden="true">
+                      <svg viewBox="0 0 16 12" aria-hidden="true" focusable="false">
+                        <path d="M1 7l4 4L15 1" />
+                      </svg>
+                    </span>
+                  </div>
+                  <p data-i18n="process.step3.text">Seitenaufbau, Mobile-Optimierung, Basis‑SEO, Formulare &amp; Tracking.</p>
+                </div>
+              </div>
+              <div class="process-item">
+                <div class="process-tag">
+                  <span data-i18n="process.week">Woche</span>
+                  <strong>4</strong>
+                </div>
+                <div class="process-card">
+                  <div class="process-card-header">
+                    <h3 data-i18n="process.step4.title">Feinschliff &amp; Go‑Live</h3>
+                    <span class="process-check" aria-hidden="true">
+                      <svg viewBox="0 0 16 12" aria-hidden="true" focusable="false">
+                        <path d="M1 7l4 4L15 1" />
+                      </svg>
+                    </span>
+                  </div>
+                  <p data-i18n="process.step4.text">Tests, Performance‑Feinschliff, letzte Korrekturen, Livegang &amp; Übergabe.</p>
+                </div>
               </div>
             </div>
-            <div class="process-item">
-              <div class="process-tag">
-                <span data-lang="de">Woche</span>
-                <span data-lang="en">Week</span>
-                <strong>2</strong>
-              </div>
-              <div class="process-card">
-                <div class="process-card-header">
-                  <h3 data-lang="de">Design & Inhalte</h3>
-                  <h3 data-lang="en">Design & content</h3>
-                  <span class="process-check" aria-hidden="true">
-                    <svg viewBox="0 0 16 12" aria-hidden="true" focusable="false">
-                      <path d="M1 7l4 4L15 1" />
-                    </svg>
-                  </span>
-                </div>
-                <p data-lang="de">Wireframes, Designrichtung, erste Entwürfe. Feedbackrunde und Anpassungen.</p>
-                <p data-lang="en">Wireframes, design direction, first drafts. Feedback round and refinements.</p>
-              </div>
-            </div>
-            <div class="process-item">
-              <div class="process-tag">
-                <span data-lang="de">Woche</span>
-                <span data-lang="en">Week</span>
-                <strong>3</strong>
-              </div>
-              <div class="process-card">
-                <div class="process-card-header">
-                  <h3 data-lang="de">Umsetzung & Technik</h3>
-                  <h3 data-lang="en">Build & setup</h3>
-                  <span class="process-check" aria-hidden="true">
-                    <svg viewBox="0 0 16 12" aria-hidden="true" focusable="false">
-                      <path d="M1 7l4 4L15 1" />
-                    </svg>
-                  </span>
-                </div>
-                <p data-lang="de">Seitenaufbau, Mobile-Optimierung, Basis‑SEO, Formulare &amp; Tracking.</p>
-                <p data-lang="en">Page build, mobile optimization, baseline SEO, forms &amp; tracking.</p>
-              </div>
-            </div>
-            <div class="process-item">
-              <div class="process-tag">
-                <span data-lang="de">Woche</span>
-                <span data-lang="en">Week</span>
-                <strong>4</strong>
-              </div>
-              <div class="process-card">
-                <div class="process-card-header">
-                  <h3 data-lang="de">Feinschliff &amp; Go‑Live</h3>
-                  <h3 data-lang="en">Polish &amp; go-live</h3>
-                  <span class="process-check" aria-hidden="true">
-                    <svg viewBox="0 0 16 12" aria-hidden="true" focusable="false">
-                      <path d="M1 7l4 4L15 1" />
-                    </svg>
-                  </span>
-                </div>
-                <p data-lang="de">Tests, Performance‑Feinschliff, letzte Korrekturen, Livegang &amp; Übergabe.</p>
-                <p data-lang="en">Testing, performance polish, final fixes, launch and handover.</p>
-              </div>
-            </div>
-          </div>
 
-          <div class="section-footer" data-lang="de">
-            <p class="section-subtitle">
-              Klare Schritte, <span class="highlight">kurze Wege</span>, schnell
-              online.
-            </p>
-          </div>
-          <div class="section-footer" data-lang="en">
-            <p class="section-subtitle">
-              Clear steps, <span class="highlight">short feedback loops</span>,
-              fast go-live.
-            </p>
+            <div class="section-footer">
+              <p class="section-subtitle" data-i18n="process.footer" data-i18n-html>
+                Klare Schritte, <span class="highlight">kurze Wege</span>, schnell online.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section" id="faq">
         <div class="container">
-          <div class="section-header centered" data-lang="de">
-            <h2 class="section-title">Häufig gestellte Fragen</h2>
-            <p class="section-copy">
-              Durchstöbern Sie unsere FAQ für Antworten auf alles, was Sie über
-              unsere Arbeit, unsere Preise, unseren Prozess und wie alles
-              funktioniert wissen möchten.
+          <div class="section-header centered">
+            <h2 class="section-title" data-i18n="faq.title">Häufig gestellte Fragen</h2>
+            <p class="section-copy" data-i18n="faq.copy">
+              Durchstöbern Sie unsere FAQ für Antworten auf alles, was Sie über unsere Arbeit, unsere Preise, unseren Prozess und wie alles funktioniert wissen möchten.
             </p>
           </div>
-          <div class="section-header centered" data-lang="en">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-copy">
-              Browse our FAQ for answers to everything you would like to know
-              about what we do, what we charge, our process, and how everything
-              works.
-            </p>
-          </div>
-          <div class="faq-filters" data-faq-filters data-lang="de">
-            <p class="sr-only">FAQ nach Kategorien filtern</p>
-            <button class="faq-filter-button" type="button" data-faq-filter="pricing" aria-pressed="false">Preise &amp; Zahlung</button>
-            <button class="faq-filter-button" type="button" data-faq-filter="process" aria-pressed="false">Ablauf</button>
-            <button class="faq-filter-button" type="button" data-faq-filter="ownership" aria-pressed="false">Besitz &amp; Betrieb</button>
-            <button class="faq-filter-button" type="button" data-faq-filter="support" aria-pressed="false">Support</button>
-            <button class="faq-filter-button" type="button" data-faq-filter="seo" aria-pressed="false">SEO &amp; Datenschutz</button>
-          </div>
-          <div class="faq-filters" data-faq-filters data-lang="en">
-            <p class="sr-only">Filter FAQs by category</p>
-            <button class="faq-filter-button" type="button" data-faq-filter="pricing" aria-pressed="false">Pricing &amp; Payments</button>
-            <button class="faq-filter-button" type="button" data-faq-filter="process" aria-pressed="false">Process</button>
-            <button class="faq-filter-button" type="button" data-faq-filter="ownership" aria-pressed="false">Ownership</button>
-            <button class="faq-filter-button" type="button" data-faq-filter="support" aria-pressed="false">Support</button>
-            <button class="faq-filter-button" type="button" data-faq-filter="seo" aria-pressed="false">SEO &amp; Privacy</button>
+          <div class="faq-filters" data-faq-filters>
+            <p class="sr-only" data-i18n="faq.filtersLabel">FAQ nach Kategorien filtern</p>
+            <button class="faq-filter-button" type="button" data-faq-filter="pricing" aria-pressed="false" data-i18n="faq.filters.pricing">Preise &amp; Zahlung</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="process" aria-pressed="false" data-i18n="faq.filters.process">Ablauf</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="ownership" aria-pressed="false" data-i18n="faq.filters.ownership">Besitz &amp; Betrieb</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="support" aria-pressed="false" data-i18n="faq.filters.support">Support</button>
+            <button class="faq-filter-button" type="button" data-faq-filter="seo" aria-pressed="false" data-i18n="faq.filters.seo">SEO &amp; Datenschutz</button>
           </div>
           <div class="faq-grid">
-            <details data-lang="de" data-faq-category="pricing">
-              <summary>Was kostet es und was ist im Preis enthalten?</summary>
+            <details data-faq-category="pricing">
+              <summary data-i18n="faq.pricing.q1">Was kostet es und was ist im Preis enthalten?</summary>
               <div class="faq-content">
-                <p>
-                  Sie erhalten ein transparentes Paket inkl. Design, Umsetzung,
-                  Mobile-Optimierung, Basis-SEO, Hosting und Support. Extras
-                  (z. B. zusätzliche Seiten oder Content) sind klar
-                  ausgewiesen.
+                <p data-i18n="faq.pricing.a1">
+                  Sie erhalten klare Pakete inkl. Design, Umsetzung, Hosting, Wartung und Support. Extras (z. B. zusätzliche Seiten oder Content) sind transparent ausgewiesen.
                 </p>
               </div>
             </details>
-            <details data-lang="en" data-faq-category="pricing">
-              <summary>What does it cost and what is included?</summary>
+            <details data-faq-category="pricing">
+              <summary data-i18n="faq.pricing.q2">Welche Zahlungsmodelle bieten Sie an?</summary>
               <div class="faq-content">
-                <p>
-                  You get transparent pricing that includes design, build,
-                  mobile optimization, basic SEO, hosting, and support. Extras
-                  (like additional pages or content) are listed separately.
+                <p data-i18n="faq.pricing.a2">
+                  Wir bieten monatliche Betreuungspakete oder eine einmalige Projektgebühr. Die Details stimmen wir transparent im Angebot ab.
                 </p>
               </div>
             </details>
-            <details data-lang="de" data-faq-category="pricing">
-              <summary>Welche Zahlungsmodelle bieten Sie an?</summary>
+            <details data-faq-category="pricing">
+              <summary data-i18n="faq.pricing.q3">Welche laufenden Kosten kommen nach dem Launch dazu?</summary>
               <div class="faq-content">
-                <p>
-                  Wir arbeiten mit klaren Festpreisen oder transparenten
-                  Paketen. Die Zahlung erfolgt in Meilensteinen, damit Sie
-                  jederzeit wissen, wofür Sie zahlen.
+                <p data-i18n="faq.pricing.a3">
+                  Bei monatlichen Paketen ist Hosting &amp; Wartung enthalten. Bei Einmalzahlung können Hosting und Support separat gebucht werden.
                 </p>
               </div>
             </details>
-            <details data-lang="en" data-faq-category="pricing">
-              <summary>Which payment models do you offer?</summary>
+            <details data-faq-category="process">
+              <summary data-i18n="faq.process.q1">Wie lange dauert die Umsetzung und was brauchen Sie von uns?</summary>
               <div class="faq-content">
-                <p>
-                  We work with clear fixed prices or transparent packages.
-                  Payments follow milestones so you always know what you are
-                  paying for.
+                <p data-i18n="faq.process.a1">
+                  Typisch 1 bis 4 Wochen. Wir brauchen Logo, Texte, Bilder und Zugang zur Domain. Fehlt etwas, unterstützen wir bei der Erstellung.
                 </p>
               </div>
             </details>
-            <details data-lang="de" data-faq-category="pricing">
-              <summary>Welche laufenden Kosten kommen nach dem Launch dazu?</summary>
+            <details data-faq-category="process">
+              <summary data-i18n="faq.process.q2">Wie viele Korrekturrunden sind enthalten?</summary>
               <div class="faq-content">
-                <p>
-                  Typische laufende Kosten sind Hosting, Domain und optionaler
-                  Support. Wir nennen diese im Angebot, damit Sie langfristig
-                  planen können.
+                <p data-i18n="faq.process.a2">
+                  Üblicherweise sind zwei Feedbackrunden enthalten. Weitere Anpassungen sind möglich und werden transparent abgestimmt.
                 </p>
               </div>
             </details>
-            <details data-lang="en" data-faq-category="pricing">
-              <summary>What ongoing costs are there after launch?</summary>
+            <details data-faq-category="process">
+              <summary data-i18n="faq.process.q3">Wer schreibt die Texte und liefert Bilder?</summary>
               <div class="faq-content">
-                <p>
-                  Typical ongoing costs are hosting, domain, and optional
-                  support. We list these in the proposal so you can plan
-                  long-term.
+                <p data-i18n="faq.process.a3">
+                  Sie können Inhalte liefern oder wir übernehmen Text, Fotos oder Bildauswahl. Wir beraten, was für Ihre Branche funktioniert.
                 </p>
               </div>
             </details>
-            <details data-lang="de" data-faq-category="process">
-              <summary>Wie lange dauert die Umsetzung und was brauchen Sie von uns?</summary>
+            <details data-faq-category="ownership">
+              <summary data-i18n="faq.ownership.q1">Gehört die Website nach dem Launch uns?</summary>
               <div class="faq-content">
-                <p>
-                  Typisch 1 bis 4 Wochen. Wir brauchen Logo, Texte, Bilder und
-                  Zugang zur Domain. Fehlt etwas, unterstützen wir bei der
-                  Erstellung.
+                <p data-i18n="faq.ownership.a1">
+                  Ja. Sie behalten volle Kontrolle über Domain, Inhalte und Dateien. Wir stellen alles so auf, dass Sie jederzeit wechseln oder selbst weiterführen können.
                 </p>
               </div>
             </details>
-            <details data-lang="en" data-faq-category="process">
-              <summary>How long does delivery take and what do you need from us?</summary>
+            <details data-faq-category="ownership">
+              <summary data-i18n="faq.ownership.q2">Können wir die Website später selbst pflegen?</summary>
               <div class="faq-content">
-                <p>
-                  Typically 1 to 4 weeks. We need your logo, text, images, and
-                  domain access. If something is missing, we help create it.
+                <p data-i18n="faq.ownership.a2">
+                  Ja. Auf Wunsch erhalten Sie ein einfaches CMS oder eine Einweisung, damit Sie Inhalte eigenständig aktualisieren können.
                 </p>
               </div>
             </details>
-            <details data-lang="de" data-faq-category="process">
-              <summary>Wie viele Korrekturrunden sind enthalten?</summary>
+            <details data-faq-category="ownership">
+              <summary data-i18n="faq.ownership.q3">Was passiert, wenn wir die Agentur wechseln?</summary>
               <div class="faq-content">
-                <p>
-                  Üblicherweise sind zwei Feedbackrunden enthalten. Weitere
-                  Anpassungen sind möglich und werden transparent abgestimmt.
+                <p data-i18n="faq.ownership.a3">
+                  Kein Problem. Sie erhalten alle Zugangsdaten und Dateien, und wir unterstützen auf Wunsch bei der Übergabe.
                 </p>
               </div>
             </details>
-            <details data-lang="en" data-faq-category="process">
-              <summary>How many revision rounds are included?</summary>
+            <details data-faq-category="support">
+              <summary data-i18n="faq.support.q1">Wie laufen Änderungen und Support nach dem Go-live?</summary>
               <div class="faq-content">
-                <p>
-                  Typically two feedback rounds are included. Additional
-                  changes are possible and agreed transparently.
+                <p data-i18n="faq.support.a1">
+                  Kleine Anpassungen erledigen wir schnell per Mail. Laufende Betreuung gibt es als Paket oder auf Abruf.
                 </p>
               </div>
             </details>
-            <details data-lang="de" data-faq-category="process">
-              <summary>Wer schreibt die Texte und liefert Bilder?</summary>
+            <details data-faq-category="support">
+              <summary data-i18n="faq.support.q2">Was passiert bei technischen Problemen oder Ausfällen?</summary>
               <div class="faq-content">
-                <p>
-                  Sie können Inhalte liefern oder wir übernehmen Text, Fotos
-                  oder Bildauswahl. Wir beraten, was für Ihre Branche
-                  funktioniert.
+                <p data-i18n="faq.support.a2">
+                  Wir überwachen die Verfügbarkeit und reagieren bei Störungen schnell. Auf Wunsch bieten wir Service-Level mit festen Reaktionszeiten.
                 </p>
               </div>
             </details>
-            <details data-lang="en" data-faq-category="process">
-              <summary>Who provides copy and images?</summary>
+            <details data-faq-category="support">
+              <summary data-i18n="faq.support.q3">Wie schnell können Sie kleine Änderungen umsetzen?</summary>
               <div class="faq-content">
-                <p>
-                  You can supply content or we can handle copy, photography, or
-                  image sourcing. We advise what works for your industry.
+                <p data-i18n="faq.support.a3">
+                  Kleine Updates erledigen wir meist innerhalb weniger Tage. Dringende Anpassungen können priorisiert werden.
                 </p>
               </div>
             </details>
-            <details data-lang="de" data-faq-category="ownership">
-              <summary>Gehört die Website nach dem Launch uns?</summary>
+            <details data-faq-category="seo">
+              <summary data-i18n="faq.seo.q1">Wie sieht es mit SEO, Tracking und Datenschutz aus?</summary>
               <div class="faq-content">
-                <p>
-                  Ja. Sie behalten volle Kontrolle über Domain, Inhalte und
-                  Dateien. Wir stellen alles so auf, dass Sie jederzeit
-                  wechseln oder selbst weiterführen können.
+                <p data-i18n="faq.seo.a1">
+                  Basis-SEO ist inklusive. Tracking richten wir DSG/DSGVO-konform ein und beraten zu Cookie-Hinweisen.
                 </p>
               </div>
             </details>
-            <details data-lang="en" data-faq-category="ownership">
-              <summary>Do we own the website after launch?</summary>
+            <details data-faq-category="seo">
+              <summary data-i18n="faq.seo.q2">Unterstützen Sie Google Business Profile und lokale Listings?</summary>
               <div class="faq-content">
-                <p>
-                  Yes. You keep full control of the domain, content, and files.
-                  We set it up so you can move or self-manage anytime.
+                <p data-i18n="faq.seo.a2">
+                  Ja. Wir helfen bei Einrichtung oder Optimierung Ihres Google-Profils und prüfen relevante lokale Verzeichnisse.
                 </p>
               </div>
             </details>
-            <details data-lang="de" data-faq-category="ownership">
-              <summary>Können wir die Website später selbst pflegen?</summary>
+            <details data-faq-category="seo">
+              <summary data-i18n="faq.seo.q3">Wie messen wir den Erfolg der Website?</summary>
               <div class="faq-content">
-                <p>
-                  Ja. Auf Wunsch erhalten Sie ein einfaches CMS oder eine
-                  Einweisung, damit Sie Inhalte eigenständig aktualisieren
-                  können.
-                </p>
-              </div>
-            </details>
-            <details data-lang="en" data-faq-category="ownership">
-              <summary>Can we maintain the website ourselves later?</summary>
-              <div class="faq-content">
-                <p>
-                  Yes. We can provide a simple CMS or a handover session so you
-                  can update content independently.
-                </p>
-              </div>
-            </details>
-            <details data-lang="de" data-faq-category="ownership">
-              <summary>Was passiert, wenn wir die Agentur wechseln?</summary>
-              <div class="faq-content">
-                <p>
-                  Kein Problem. Sie erhalten alle Zugangsdaten und Dateien, und
-                  wir unterstützen auf Wunsch bei der Übergabe.
-                </p>
-              </div>
-            </details>
-            <details data-lang="en" data-faq-category="ownership">
-              <summary>What happens if we change agencies?</summary>
-              <div class="faq-content">
-                <p>
-                  No problem. You receive all access and files, and we can
-                  support a smooth handover if needed.
-                </p>
-              </div>
-            </details>
-            <details data-lang="de" data-faq-category="support">
-              <summary>Wie laufen Änderungen und Support nach dem Go-live?</summary>
-              <div class="faq-content">
-                <p>
-                  Kleine Anpassungen erledigen wir schnell per Mail. Für
-                  laufende Betreuung gibt es flexible Pakete oder Abruf.
-                </p>
-              </div>
-            </details>
-            <details data-lang="en" data-faq-category="support">
-              <summary>How do changes and support work after go-live?</summary>
-              <div class="faq-content">
-                <p>
-                  Small changes are handled quickly by email. Ongoing care is
-                  available via flexible packages or on-demand.
-                </p>
-              </div>
-            </details>
-            <details data-lang="de" data-faq-category="support">
-              <summary>Was passiert bei technischen Problemen oder Ausfällen?</summary>
-              <div class="faq-content">
-                <p>
-                  Wir überwachen die Verfügbarkeit und reagieren bei Störungen
-                  schnell. Auf Wunsch bieten wir Service-Level mit festen
-                  Reaktionszeiten.
-                </p>
-              </div>
-            </details>
-            <details data-lang="en" data-faq-category="support">
-              <summary>What happens if there are technical issues or downtime?</summary>
-              <div class="faq-content">
-                <p>
-                  We monitor availability and respond quickly to issues. If
-                  needed, we offer service levels with defined response times.
-                </p>
-              </div>
-            </details>
-            <details data-lang="de" data-faq-category="support">
-              <summary>Wie schnell können Sie kleine Änderungen umsetzen?</summary>
-              <div class="faq-content">
-                <p>
-                  Kleine Updates erledigen wir meist innerhalb weniger Tage.
-                  Dringende Anpassungen können priorisiert werden.
-                </p>
-              </div>
-            </details>
-            <details data-lang="en" data-faq-category="support">
-              <summary>How fast can you handle small updates?</summary>
-              <div class="faq-content">
-                <p>
-                  Small updates are usually done within a few days. Urgent
-                  changes can be prioritized.
-                </p>
-              </div>
-            </details>
-            <details data-lang="de" data-faq-category="seo">
-              <summary>Wie sieht es mit SEO, Tracking und Datenschutz aus?</summary>
-              <div class="faq-content">
-                <p>
-                  Basis-SEO ist inklusive. Wir richten Analytics nach Wunsch
-                  ein und achten auf DSGVO/DSG-Standards inkl. Cookie-Hinweis.
-                </p>
-              </div>
-            </details>
-            <details data-lang="en" data-faq-category="seo">
-              <summary>What about SEO, tracking, and privacy?</summary>
-              <div class="faq-content">
-                <p>
-                  Basic SEO is included. We can set up analytics and follow
-                  GDPR/Swiss privacy requirements including a cookie notice.
-                </p>
-              </div>
-            </details>
-            <details data-lang="de" data-faq-category="seo">
-              <summary>Unterstützen Sie Google Business Profile und lokale Listings?</summary>
-              <div class="faq-content">
-                <p>
-                  Ja. Wir helfen bei Einrichtung oder Optimierung Ihres
-                  Google-Profils und können wichtige lokale Verzeichnisse
-                  anlegen oder prüfen.
-                </p>
-              </div>
-            </details>
-            <details data-lang="en" data-faq-category="seo">
-              <summary>Do you help with Google Business Profile and local listings?</summary>
-              <div class="faq-content">
-                <p>
-                  Yes. We can set up or optimize your Google profile and help
-                  with relevant local directories.
-                </p>
-              </div>
-            </details>
-            <details data-lang="de" data-faq-category="seo">
-              <summary>Wie messen wir den Erfolg der Website?</summary>
-              <div class="faq-content">
-                <p>
-                  Wir definieren gemeinsam Ziele wie Anfragen, Anrufe oder
-                  Reservierungen und richten Tracking datenschutzkonform ein.
-                </p>
-              </div>
-            </details>
-            <details data-lang="en" data-faq-category="seo">
-              <summary>How do we measure website success?</summary>
-              <div class="faq-content">
-                <p>
-                  We define goals such as inquiries, calls, or bookings and set
-                  up privacy-compliant tracking.
+                <p data-i18n="faq.seo.a3">
+                  Wir definieren gemeinsam Ziele wie Anfragen, Anrufe oder Buchungen und richten datenschutzkonformes Tracking ein.
                 </p>
               </div>
             </details>
           </div>
 
-          <div class="section-footer" data-lang="de">
-            <p class="section-subtitle">
+          <div class="section-footer">
+            <p class="section-subtitle" data-i18n="faq.footer" data-i18n-html>
               Kurz und <span class="highlight">transparent</span> beantwortet.
-            </p>
-          </div>
-          <div class="section-footer" data-lang="en">
-            <p class="section-subtitle">
-              Short and <span class="highlight">transparent</span> answers.
             </p>
           </div>
         </div>
@@ -932,68 +621,59 @@
 
       <section class="section contact" id="kontakt">
         <div class="container">
-          <div class="section-header centered" data-lang="de">
-            <h2>Kontakt</h2>
+          <div class="section-header centered">
+            <h2 data-i18n="contact.title">Kontakt</h2>
           </div>
-          <div class="section-header centered" data-lang="en">
-            <h2>Contact</h2>
-          </div>
-          <div class="contact-button-wrap" data-lang="de">
-            <a class="split email-split" href="mailto:hallo@ewebit.ch">
-              <span class="split__bg"></span>
-              <span class="split__fg">
-                <span class="split__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M4 6h16v12H4z"></path>
-                    <path d="m4 7 8 6 8-6"></path>
-                  </svg>
+          <div class="contact-options">
+            <div class="contact-button-wrap">
+              <a class="split email-split" href="mailto:hallo@ewebit.ch">
+                <span class="split__bg"></span>
+                <span class="split__fg">
+                  <span class="split__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M4 6h16v12H4z"></path>
+                      <path d="m4 7 8 6 8-6"></path>
+                    </svg>
+                  </span>
+                  <span>hallo@ewebit.ch</span>
                 </span>
-                <span>hallo@ewebit.ch</span>
-              </span>
-            </a>
-          </div>
-          <div class="contact-button-wrap" data-lang="en">
-            <a class="split email-split" href="mailto:hallo@ewebit.ch">
-              <span class="split__bg"></span>
-              <span class="split__fg">
-                <span class="split__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M4 6h16v12H4z"></path>
-                    <path d="m4 7 8 6 8-6"></path>
-                  </svg>
+              </a>
+            </div>
+            <div class="contact-button-wrap">
+              <a class="split phone-split" href="tel:+41XXXXXXXXX">
+                <span class="split__bg"></span>
+                <span class="split__fg">
+                  <span class="split__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </span>
+                  <span>+41 XX XXX XX XX</span>
                 </span>
-                <span>hallo@ewebit.ch</span>
-              </span>
-            </a>
+              </a>
+            </div>
           </div>
 
-          <div class="section-footer" data-lang="de">
-            <p class="section-subtitle">
+          <div class="section-footer">
+            <p class="section-subtitle" data-i18n="contact.footer" data-i18n-html>
               Wir freuen uns auf <span class="highlight">Ihre</span> Anfrage.
-            </p>
-          </div>
-          <div class="section-footer" data-lang="en">
-            <p class="section-subtitle">
-              We look forward to <span class="highlight">your</span> inquiry.
             </p>
           </div>
         </div>
       </section>
     </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <p data-lang="de">&copy 2026 EWEB IT. Schweizer Webdesign & Entwicklung.</p>
-        <p data-lang="en">&copy 2026 EWEB IT. Swiss web design & development.</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-buttons">
-          <a href="./impressum.html" data-lang="de">Impressum und Datenschutz</a>
-          <a href="./impressum.html" data-lang="en">Imprint and Privacy policy</a>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <p data-i18n="footer.copy">&copy 2026 EWEB IT. Schweizer Webdesign &amp; Entwicklung.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-buttons">
+            <a href="./impressum.html" data-i18n="footer.legal">Impressum und Datenschutz</a>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
   </body>
 </html>
