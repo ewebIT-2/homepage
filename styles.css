@@ -701,14 +701,17 @@ body[data-theme="dark"] .theme-toggle .icon-moon {
 }
 
 .hero-panel {
-  display: grid;
-  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
 }
 
-.panel-line {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0.6;
+.hero-graphic {
+  width: min(900px, 100%);
+  height: auto;
+  opacity: 0.95;
+  filter: drop-shadow(0 22px 50px rgba(0, 0, 0, 0.35));
 }
 
 .section {
