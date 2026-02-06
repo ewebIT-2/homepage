@@ -55,8 +55,10 @@
     }
     </script>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="faq.css" />
+    <link rel="stylesheet" href="footer.css" />
     <link rel="icon" href="favicon.svg" data-favicon />
-    <script defer src="script.js"></script>
+    <script type="module" src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -74,7 +76,7 @@
           <img class="logo-mark is-dark" src="dark.svg" alt="" aria-hidden="true" />
           <span>eweb IT</span>
         </a>
-        <nav class="site-nav" aria-label="" data-i18n-attr="aria-label:nav.aria">
+        <nav class="site-nav" id="site-nav" aria-label="" data-i18n-attr="aria-label:nav.aria">
           <a href="#warum-wir" data-i18n="nav.why">Warum wir</a>
           <a href="#pakete" data-i18n="nav.packages">Pakete</a>
           <a href="#ablauf" data-i18n="nav.process">Ablauf</a>
@@ -82,6 +84,20 @@
           <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
         </nav>
         <div class="header-actions">
+          <button
+            type="button"
+            class="nav-toggle"
+            data-nav-toggle
+            aria-controls="site-nav"
+            aria-expanded="false"
+            aria-label=""
+            data-i18n-attr="aria-label:nav.toggle"
+          >
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="sr-only" data-i18n="nav.toggle">Menue</span>
+          </button>
           <div class="lang-switch" role="group" aria-label="" data-i18n-attr="aria-label:lang.aria">
             <span class="lang-indicator" aria-hidden="true"></span>
             <button
@@ -131,6 +147,7 @@
         </div>
       </div>
     </header>
+    <div class="nav-overlay" data-nav-overlay></div>
 
     <main>
       <section class="hero">
@@ -664,15 +681,58 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <div class="footer-content">
-          <p data-i18n="footer.copy">&copy 2026 EWEB IT. Schweizer Webdesign &amp; Entwicklung.</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-buttons">
-            <a href="./impressum.html" data-i18n="footer.legal">Impressum und Datenschutz</a>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="logo bungee-shade-regular footer-logo" href="./index.html" aria-label="ewebIT">
+            <img class="logo-mark is-light" src="light.svg" alt="" aria-hidden="true" />
+            <img class="logo-mark is-dark" src="dark.svg" alt="" aria-hidden="true" />
+            <span>eweb IT</span>
+          </a>
+          <h3 class="footer-title" data-i18n="footer.aboutTitle">Ueber uns</h3>
+          <p class="footer-about" data-i18n="footer.about">
+            Schweizer Webdesign-Studio fuer schnelle, klare und wartbare Websites fuer KMU.
+          </p>
+          <div class="footer-contact">
+            <a href="mailto:hallo@ewebit.ch">hallo@ewebit.ch</a>
+            <a href="tel:+41XXXXXXXXX">+41 XX XXX XX XX</a>
           </div>
         </div>
+        <div class="footer-column">
+          <h3 class="footer-title" data-i18n="footer.quickTitle">Quick Links</h3>
+          <ul class="footer-list">
+            <li><a href="#warum-wir" data-i18n="nav.why">Warum wir</a></li>
+            <li><a href="#pakete" data-i18n="nav.packages">Pakete</a></li>
+            <li><a href="#ablauf" data-i18n="nav.process">Ablauf</a></li>
+            <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+            <li><a href="#kontakt" data-i18n="nav.contact">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title" data-i18n="footer.legalTitle">Rechtliches</h3>
+          <ul class="footer-list">
+            <li><a href="./impressum.html" data-i18n="footer.legal">Impressum und Datenschutz</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title" data-i18n="footer.socialTitle">Social</h3>
+          <div class="footer-social">
+            <a class="social-link" href="https://www.linkedin.com" target="_blank" rel="noopener">
+              <span class="social-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M6.94 8.5H3.5V20h3.44V8.5z"></path>
+                  <path d="M5.22 4a2 2 0 1 0 0 4a2 2 0 0 0 0-4z"></path>
+                  <path d="M20.5 14.1c0-3.3-1.8-4.8-4.3-4.8c-2 0-2.9 1.1-3.4 1.9V8.5H9.4V20h3.7v-6.1c0-1.6.3-3.1 2.2-3.1c1.9 0 1.9 1.7 1.9 3.2V20h3.3v-5.9z"></path>
+                </svg>
+              </span>
+              <span data-i18n="footer.linkedin">LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p class="footer-copy" data-i18n="footer.copy" data-i18n-html>
+          &copy; <span data-current-year>2026</span> EWEB IT. Schweizer Webdesign &amp; Entwicklung.
+        </p>
       </div>
     </footer>
   </body>

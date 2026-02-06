@@ -1,3 +1,7 @@
+import { initFaq } from "./scripts/faq.js";
+import { initScrollReveal } from "./scripts/reveal.js";
+import { initMobileNav } from "./scripts/nav.js";
+
 const translations = {
   de: {
     meta: {
@@ -10,6 +14,7 @@ const translations = {
     nav: {
       skip: "Zum Inhalt springen",
       aria: "Hauptnavigation",
+      toggle: "Menue",
       why: "Warum wir",
       packages: "Pakete",
       process: "Ablauf",
@@ -192,7 +197,14 @@ const translations = {
       footer: "Wir freuen uns auf <highlight>Ihre</highlight> Anfrage.",
     },
     footer: {
-      copy: "© 2026 EWEB IT. Schweizer Webdesign & Entwicklung.",
+      aboutTitle: "Ueber uns",
+      about:
+        "Schweizer Webdesign-Studio fuer schnelle, klare und wartbare Websites fuer KMU.",
+      quickTitle: "Quick Links",
+      legalTitle: "Rechtliches",
+      socialTitle: "Social",
+      linkedin: "LinkedIn",
+      copy: "© <year></year> EWEB IT. Schweizer Webdesign & Entwicklung.",
       legal: "Impressum und Datenschutz",
     },
   },
@@ -207,6 +219,7 @@ const translations = {
     nav: {
       skip: "Skip to content",
       aria: "Primary navigation",
+      toggle: "Open menu",
       why: "Why Us",
       packages: "Packages",
       process: "Process",
@@ -389,7 +402,14 @@ const translations = {
       footer: "We look forward to <highlight>your</highlight> inquiry.",
     },
     footer: {
-      copy: "© 2026 EWEB IT. Swiss web design & development.",
+      aboutTitle: "About",
+      about:
+        "Swiss web design studio for fast, clear, and maintainable websites for SMEs.",
+      quickTitle: "Quick Links",
+      legalTitle: "Legal",
+      socialTitle: "Social",
+      linkedin: "LinkedIn",
+      copy: "© <year></year> EWEB IT. Swiss web design & development.",
       legal: "Imprint and Privacy policy",
     },
   },
@@ -414,7 +434,9 @@ function resolveKey(obj, path) {
 function formatMarkup(value) {
   return String(value)
     .replace(/<highlight>/g, '<span class="highlight">')
-    .replace(/<\/highlight>/g, "</span>");
+    .replace(/<\/highlight>/g, "</span>")
+    .replace(/<year>/g, '<span class="footer-year" data-current-year>')
+    .replace(/<\/year>/g, "</span>");
 }
 
 function applyTranslations(lang) {
@@ -453,22 +475,34 @@ function applyTranslations(lang) {
   });
 
   updateThemeLabel(lang);
+  updateCurrentYear();
 }
 
-function updateLangIndicator(activeButton) {
-  if (!langSwitch || !langIndicator || !activeButton) {
+function updateCurrentYear() {
+  const year = new Date().getFullYear();
+  document.querySelectorAll("[data-current-year]").forEach((el) => {
+    el.textContent = String(year);
+  });
+}
+
+function updatePillIndicator(container, indicator, activeButton) {
+  if (!container || !indicator || !activeButton) {
     return;
   }
 
-  const switchRect = langSwitch.getBoundingClientRect();
+  const containerRect = container.getBoundingClientRect();
   const buttonRect = activeButton.getBoundingClientRect();
-  const offsetX = buttonRect.left - switchRect.left;
-  const offsetY = buttonRect.top - switchRect.top;
+  const offsetX = buttonRect.left - containerRect.left;
+  const offsetY = buttonRect.top - containerRect.top;
 
-  langSwitch.style.setProperty("--indicator-x", `${offsetX}px`);
-  langSwitch.style.setProperty("--indicator-y", `${offsetY}px`);
-  langSwitch.style.setProperty("--indicator-w", `${buttonRect.width}px`);
-  langSwitch.style.setProperty("--indicator-h", `${buttonRect.height}px`);
+  container.style.setProperty("--indicator-x", `${offsetX}px`);
+  container.style.setProperty("--indicator-y", `${offsetY}px`);
+  container.style.setProperty("--indicator-w", `${buttonRect.width}px`);
+  container.style.setProperty("--indicator-h", `${buttonRect.height}px`);
+}
+
+function updateLangIndicator(activeButton) {
+  updatePillIndicator(langSwitch, langIndicator, activeButton);
 }
 
 function setLanguage(lang) {
@@ -554,141 +588,6 @@ if (themeToggle) {
   });
 }
 
-const faqItems = document.querySelectorAll(".faq-grid details");
-const faqFilterButtons = document.querySelectorAll("[data-faq-filter]");
-
-function setFaqFilter(nextFilter) {
-  const filter = nextFilter || "pricing";
-
-  faqFilterButtons.forEach((button) => {
-    const isActive = button.dataset.faqFilter === filter;
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", isActive ? "true" : "false");
-  });
-
-  faqItems.forEach((item) => {
-    const matches = filter === "all" || item.dataset.faqCategory === filter;
-    const content = item.querySelector(".faq-content");
-
-    item.classList.toggle("is-hidden", !matches);
-    item.setAttribute("aria-hidden", matches ? "false" : "true");
-
-    if (!matches) {
-      item.open = false;
-      item.classList.remove("is-closing");
-      item.dataset.animating = "false";
-      if (content) {
-        content.style.height = "0px";
-      }
-    }
-  });
-}
-
-faqFilterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    setFaqFilter(button.dataset.faqFilter);
-  });
-});
-
-if (faqFilterButtons.length) {
-  const initialFilterButton =
-    document.querySelector('[data-faq-filter][aria-pressed="true"]') ||
-    faqFilterButtons[0];
-  const initialFilter =
-    initialFilterButton?.dataset.faqFilter || faqFilterButtons[0].dataset.faqFilter;
-  setFaqFilter(initialFilter);
-}
-
-faqItems.forEach((item) => {
-  const summary = item.querySelector("summary");
-  const content = item.querySelector(".faq-content");
-  let closeTimer;
-  let openTimer;
-
-  if (!summary || !content) {
-    return;
-  }
-
-  content.style.height = item.open ? `${content.scrollHeight}px` : "0px";
-
-  summary.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    if (prefersReducedMotion) {
-      item.open = !item.open;
-      content.style.height = item.open ? "auto" : "0px";
-      return;
-    }
-
-    if (item.dataset.animating === "true") {
-      return;
-    }
-
-    if (item.open) {
-      item.dataset.animating = "true";
-      const startHeight = content.scrollHeight;
-      content.style.height = `${startHeight}px`;
-      item.classList.add("is-closing");
-      void content.offsetHeight;
-
-      requestAnimationFrame(() => {
-        content.style.height = "0px";
-      });
-
-      const onClose = (closeEvent) => {
-        if (closeEvent.propertyName !== "height") {
-          return;
-        }
-        item.classList.remove("is-closing");
-        item.open = false;
-        content.style.height = "0px";
-        item.dataset.animating = "false";
-        content.removeEventListener("transitionend", onClose);
-        clearTimeout(closeTimer);
-      };
-
-      content.addEventListener("transitionend", onClose);
-      clearTimeout(closeTimer);
-      closeTimer = setTimeout(() => {
-        item.classList.remove("is-closing");
-        item.open = false;
-        content.style.height = "0px";
-        item.dataset.animating = "false";
-        content.removeEventListener("transitionend", onClose);
-      }, 450);
-      return;
-    }
-
-    item.dataset.animating = "true";
-    item.open = true;
-    content.style.height = "0px";
-    const endHeight = content.scrollHeight;
-    void content.offsetHeight;
-
-    requestAnimationFrame(() => {
-      content.style.height = `${endHeight}px`;
-    });
-
-    const onOpen = (openEvent) => {
-      if (openEvent.propertyName !== "height") {
-        return;
-      }
-      content.style.height = "auto";
-      item.dataset.animating = "false";
-      content.removeEventListener("transitionend", onOpen);
-      clearTimeout(openTimer);
-    };
-
-    content.addEventListener("transitionend", onOpen);
-    clearTimeout(openTimer);
-    openTimer = setTimeout(() => {
-      content.style.height = "auto";
-      item.dataset.animating = "false";
-      content.removeEventListener("transitionend", onOpen);
-    }, 450);
-  });
-});
-
 const pricingBtns = document.querySelectorAll("[data-pricing-toggle]");
 const monthlyGrid = document.getElementById("pricing-monthly");
 const lumpSumGrid = document.getElementById("pricing-lump-sum");
@@ -696,19 +595,7 @@ const lumpSumGrid = document.getElementById("pricing-lump-sum");
 function updatePricingIndicator(activeButton) {
   const pricingSwitch = activeButton.closest(".pricing-switch");
   const pricingIndicator = pricingSwitch?.querySelector(".pricing-indicator");
-  if (!pricingSwitch || !pricingIndicator || !activeButton) {
-    return;
-  }
-
-  const switchRect = pricingSwitch.getBoundingClientRect();
-  const buttonRect = activeButton.getBoundingClientRect();
-  const offsetX = buttonRect.left - switchRect.left;
-  const offsetY = buttonRect.top - switchRect.top;
-
-  pricingSwitch.style.setProperty("--indicator-x", `${offsetX}px`);
-  pricingSwitch.style.setProperty("--indicator-y", `${offsetY}px`);
-  pricingSwitch.style.setProperty("--indicator-w", `${buttonRect.width}px`);
-  pricingSwitch.style.setProperty("--indicator-h", `${buttonRect.height}px`);
+  updatePillIndicator(pricingSwitch, pricingIndicator, activeButton);
 }
 
 function setPricingModel(type) {
@@ -750,37 +637,6 @@ window.addEventListener("resize", () => {
   updateLangIndicator(activeLangBtn);
 });
 
-// Scroll Reveal Animations
-const revealElements = document.querySelectorAll(
-  ".section, .trust-card, .package-card, .process-card, .faq-grid details"
-);
-
-function initScrollReveal() {
-  if (prefersReducedMotion) {
-    revealElements.forEach((el) => el.classList.add("is-visible"));
-    return;
-  }
-
-  revealElements.forEach((el) => {
-    el.classList.add("reveal");
-  });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    }
-  );
-
-  revealElements.forEach((el) => observer.observe(el));
-}
-
-initScrollReveal();
+initMobileNav();
+initFaq({ prefersReducedMotion });
+initScrollReveal({ prefersReducedMotion });

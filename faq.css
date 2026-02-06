@@ -1,0 +1,115 @@
+.faq-grid details {
+  cursor: pointer;
+}
+
+.faq-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0 2.6rem;
+}
+
+.faq-filter-button {
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  color: #FFD700;
+  padding: 0.8rem 1.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease,
+    transform 200ms ease, box-shadow 200ms ease;
+}
+
+body[data-theme="light"] .faq-filter-button {
+  background: rgba(11, 20, 48, 0.92);
+  border-color: rgba(11, 20, 48, 0.92);
+}
+
+.faq-filter-button:hover,
+.faq-filter-button:focus {
+  color: #000000;
+  border-color: #FFD700;
+  background: #FFD700;
+  transform: translateY(-2px);
+}
+
+.faq-filter-button.is-active,
+.faq-filter-button[aria-pressed="true"] {
+  color: #000000;
+  border-color: #FFD700;
+  background: #FFD700;
+  box-shadow: 0 16px 32px rgba(2, 8, 16, 0.3);
+}
+
+.faq-filter-button.is-active:hover,
+.faq-filter-button.is-active:focus,
+.faq-filter-button[aria-pressed="true"]:hover,
+.faq-filter-button[aria-pressed="true"]:focus {
+  color: #000000;
+  background: #FFD700;
+  box-shadow: 0 16px 32px rgba(2, 8, 16, 0.3);
+}
+
+.faq-grid details.is-hidden {
+  display: none;
+}
+
+.faq-grid summary {
+  list-style: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  position: relative;
+  padding: 0.9rem 1.15rem;
+  padding-right: 2.6rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.faq-grid summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.15rem;
+  color: var(--accent);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.faq-grid details[open] summary::after {
+  content: "-";
+}
+
+.faq-grid .faq-content {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: height 320ms var(--hover-out), opacity 220ms var(--hover-out),
+    transform 220ms var(--hover-out);
+}
+
+.faq-grid details[open] .faq-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-timing-function: var(--hover-in);
+}
+
+.faq-grid details.is-closing .faq-content {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition-timing-function: var(--hover-out);
+}
+
+.faq-grid .faq-content > p {
+  margin-top: 0.75rem;
+  padding: 0 1.15rem 1rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
