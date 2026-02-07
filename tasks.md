@@ -1,0 +1,5 @@
+- [x] As a website visitor, I want to access the impressum and privacy policy on distinct pages so that I can easily find and read each document independently.
+- [x] As a website visitor, I want to see the company's location (Switzerland) in the footer's "About" section so that I can quickly identify where the company is based.
+- [x] As a company representative, I want a professionally designed and legally compliant impressum page so that our website meets legal requirements and builds trust with visitors.
+- [x] As a company representative, I want a professionally designed and legally compliant privacy policy page so that our website clearly communicates our data handling practices and adheres to privacy regulations.
+- [x] As a website visitor, I want to access the "Allgemeine Geschäftsbedingungen" (AGB) page from the footer's legal section so that I can review the terms and conditions of using the website/services. As a company representative, I want this AGB page to be professionally designed and legally comprehensive.

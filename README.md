@@ -1,15 +1,15 @@
 # ewebIT Onepager
 
-Diese Dateien sind eine statische Onepager-Landingpage (DE/EN) fuer ewebIT.
+Diese Dateien sind eine statische Onepager-Landingpage (DE/EN) für ewebIT.
 
-## Lokal oeffnen
-- Datei `index.html` direkt im Browser oeffnen.
+## Lokal öffnen
+- Datei `index.html` direkt im Browser öffnen.
 
 ## Optional: lokaler HTTP-Server
-- Im Projektordner ausfuehren:
+- Im Projektordner ausführen:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-- Danach im Browser `http://localhost:8080` oeffnen.
+- Danach im Browser `http://localhost:8080` öffnen.

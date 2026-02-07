@@ -1,6 +1,6 @@
-import { initFaq } from "./scripts/faq.js";
-import { initScrollReveal } from "./scripts/reveal.js";
-import { initMobileNav } from "./scripts/nav.js";
+import { initFaq } from "./faq.js";
+import { initScrollReveal } from "./reveal.js";
+import { initMobileNav } from "./nav.js";
 
 const translations = {
   de: {
@@ -14,7 +14,7 @@ const translations = {
     nav: {
       skip: "Zum Inhalt springen",
       aria: "Hauptnavigation",
-      toggle: "Menue",
+      toggle: "Menü",
       why: "Warum wir",
       packages: "Pakete",
       process: "Ablauf",
@@ -197,15 +197,17 @@ const translations = {
       footer: "Wir freuen uns auf <highlight>Ihre</highlight> Anfrage.",
     },
     footer: {
-      aboutTitle: "Ueber uns",
+      aboutTitle: "Über uns",
       about:
-        "Schweizer Webdesign-Studio fuer schnelle, klare und wartbare Websites fuer KMU.",
+        "Schweizer Webdesign-Studio für schnelle, klare und wartbare Websites für KMU. Standort: Schweiz.",
       quickTitle: "Quick Links",
       legalTitle: "Rechtliches",
       socialTitle: "Social",
       linkedin: "LinkedIn",
-      copy: "© <year></year> EWEB IT. Schweizer Webdesign & Entwicklung.",
-      legal: "Impressum und Datenschutz",
+      copy: "&copy; <year></year> EWEB IT. Schweizer Webdesign & Entwicklung.",
+      legalImprint: "Impressum",
+      legalPrivacy: "Datenschutzerklärung",
+      legalAgb: "AGB",
     },
   },
   en: {
@@ -404,13 +406,15 @@ const translations = {
     footer: {
       aboutTitle: "About",
       about:
-        "Swiss web design studio for fast, clear, and maintainable websites for SMEs.",
+        "Swiss web design studio for fast, clear, and maintainable websites for SMEs. Location: Switzerland.",
       quickTitle: "Quick Links",
       legalTitle: "Legal",
       socialTitle: "Social",
       linkedin: "LinkedIn",
-      copy: "© <year></year> EWEB IT. Swiss web design & development.",
-      legal: "Imprint and Privacy policy",
+      copy: "&copy; <year></year> EWEB IT. Swiss web design & development.",
+      legalImprint: "Imprint",
+      legalPrivacy: "Privacy policy",
+      legalAgb: "Terms and conditions",
     },
   },
 };
@@ -554,7 +558,10 @@ function setTheme(theme) {
     updateThemeLabel();
   }
   if (favicon) {
-    favicon.setAttribute("href", theme === "dark" ? "dark.svg" : "light.svg");
+    favicon.setAttribute(
+      "href",
+      theme === "dark" ? "assets/images/dark.svg" : "assets/images/light.svg"
+    );
   }
   localStorage.setItem("ewebit-theme", theme);
 }
