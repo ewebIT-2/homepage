@@ -1,6 +1,7 @@
 import { initFaq } from "./faq.js";
 import { initScrollReveal } from "./reveal.js";
 import { initMobileNav } from "./nav.js";
+import { initProcessAnimation } from "./process-animation.js";
 
 const translations = {
   de: {
@@ -647,3 +648,4 @@ window.addEventListener("resize", () => {
 initMobileNav();
 initFaq({ prefersReducedMotion });
 initScrollReveal({ prefersReducedMotion });
+initProcessAnimation({ prefersReducedMotion });
