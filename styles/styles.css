@@ -1193,7 +1193,7 @@ body[data-theme="light"] .pricing-btn[aria-pressed="true"] {
 
 .process-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.4rem;
   position: relative;
 }
@@ -1202,8 +1202,9 @@ body[data-theme="light"] .pricing-btn[aria-pressed="true"] {
   width: 3.1rem;
   height: 3.1rem;
   border-radius: 999px;
-  background: var(--accent);
-  color: var(--text-on-accent);
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1214,14 +1215,16 @@ body[data-theme="light"] .pricing-btn[aria-pressed="true"] {
   font-weight: 600;
   line-height: 1.1;
   text-transform: uppercase;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
+  transition: transform var(--transition), background var(--transition),
+    color var(--transition), box-shadow var(--transition);
 }
 
-body[data-theme="light"] .process-tag {
-  background: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
-  box-shadow: none;
+.process-item.is-active .process-tag {
+  transform: scale(1.05);
+  background: var(--accent);
+  color: var(--text-on-accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
 .process-tag strong {
@@ -1235,8 +1238,10 @@ body[data-theme="light"] .process-tag {
   border-radius: 18px;
   padding: 1.25rem 1.5rem;
   box-shadow: var(--shadow);
+  opacity: 0.6;
   transition: transform var(--transition), box-shadow var(--transition),
-    border-color var(--transition), background var(--transition);
+    border-color var(--transition), background var(--transition),
+    opacity 400ms ease;
 }
 
 .process-card:hover,
@@ -1249,6 +1254,7 @@ body[data-theme="light"] .process-tag {
     var(--accent-soft),
     transparent 70%
   );
+  opacity: 1;
 }
 
 .process-card-header {
@@ -1321,6 +1327,44 @@ body[data-theme="light"] .process-tag {
   grid-column: 1 / -1;
   width: 100%;
   text-align: center;
+}
+
+/* Process Timeline Animation */
+.process-highlight-bar {
+  position: absolute;
+  left: 1.5rem;
+  top: 0.5rem;
+  width: 2px;
+  height: 0;
+  background: var(--accent);
+  transform: translateX(0);
+  transition: height 500ms ease;
+  z-index: 1;
+}
+
+@media (max-width: 960px) {
+  .process-highlight-bar {
+    left: 1.2rem;
+  }
+}
+
+.process-item.is-active .process-card {
+  transform: translateY(-6px);
+  border-color: var(--accent-soft);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--accent-soft);
+  background: linear-gradient(
+    160deg,
+    var(--accent-soft),
+    transparent 70%
+  );
+  opacity: 1;
+}
+
+.process-item.is-active .process-check {
+  transform: scale(1.05);
+  background: var(--accent);
+  color: var(--text-on-accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
 @media (max-width: 600px) {
