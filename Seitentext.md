@@ -36,12 +36,12 @@ Warum eweb IT
 Pakete & Preise
 - Preismodell wählen
 - Monatsmodell Hinweis: Flexible monatliche Betreuung inklusive Hosting und Wartung.
-- Monatsmodell Business: ab CHF ___/Mt. | Leistungen: Mehrere Unterseiten; Individuelles Layout; Content-Integration; Hosting & Wartung inkl.
-- Monatsmodell Onepager (Beliebt): ab CHF ___/Mt. | Leistungen: 1 Seite, klare Struktur; Kontakt & CTA-Text; Basis-SEO & Performance; Hosting & Wartung inkl.
+- Monatsmodell Business: ab CHF 50/Mt. | Leistungen: Mehrere Unterseiten; Individuelles Layout; Content-Integration; Hosting & Wartung inkl.
+- Monatsmodell Onepager (Beliebt): ab CHF 13/Mt. | Leistungen: 1 Seite, klare Struktur; Kontakt & CTA-Text; Basis-SEO & Performance; Hosting & Wartung inkl.
 - Monatsmodell Individuell: nach Absprache | Leistungen: Komplexe Anforderungen; Integrationen & Beratung; Langfristige Betreuung
 - Einmalzahlung Hinweis: Einmalige Projektgebühr für Design und Entwicklung.
-- Einmalzahlung Business: ab CHF ___ | Leistungen: Mehrere Unterseiten; Individuelles Layout; Content-Integration; Hosting separat
-- Einmalzahlung Onepager (Beliebt): ab CHF ___ | Leistungen: 1 Seite, klare Struktur; Kontakt & CTA-Text; Basis-SEO & Performance; Hosting separat
+- Einmalzahlung Business: ab CHF 900 | Leistungen: Mehrere Unterseiten; Individuelles Layout; Content-Integration; Hosting separat
+- Einmalzahlung Onepager (Beliebt): ab CHF 320 | Leistungen: 1 Seite, klare Struktur; Kontakt & CTA-Text; Basis-SEO & Performance; Hosting separat
 - Einmalzahlung Individuell: nach Absprache | Leistungen: Komplexe Anforderungen; Integrationen & Beratung; Langfristige Betreuung
 - Disclaimer: Hinweis: Das passende Paket wird nach einem gemeinsamen Beratungsgespräch individuell auf Ihre Bedürfnisse abgestimmt.
 - Add-ons: Zusätzliche Seiten, Content-Erstellung, Bildbearbeitung.
@@ -87,7 +87,7 @@ FAQ
 Kontakt
 - Titel: Kontakt
 - E-Mail: hallo@ewebit.ch
-- Telefon: +41 XX XXX XX XX
+- Telefon: +41 79 785 79 09
 - Footer: Wir freuen uns auf Ihre Anfrage.
 
 Footer
@@ -159,12 +159,12 @@ Why eweb IT
 Packages & Pricing
 - Choose pricing model
 - Monthly note: Flexible monthly support including hosting and maintenance.
-- Monthly Business: from CHF ___/mo. | Features: Multiple pages; Custom layout; Content integration; Hosting & maintenance incl.
-- Monthly One-pager (Best Value): from CHF ___/mo. | Features: Single page, clear structure; Contact & CTA copy; Basic SEO & performance; Hosting & maintenance incl.
+- Monthly Business: from CHF 50/mo. | Features: Multiple pages; Custom layout; Content integration; Hosting & maintenance incl.
+- Monthly One-pager (Best Value): from CHF 13/mo. | Features: Single page, clear structure; Contact & CTA copy; Basic SEO & performance; Hosting & maintenance incl.
 - Monthly Custom: in consultation | Features: Complex requirements; Integrations & consulting; Long-term support
 - Lump sum note: One-time project fee for design and development.
-- Lump sum Business: from CHF ___ | Features: Multiple pages; Custom layout; Content integration; Hosting separate
-- Lump sum One-pager (Best Value): from CHF ___ | Features: Single page, clear structure; Contact & CTA copy; Basic SEO & performance; Hosting separate
+- Lump sum Business: from CHF 900 | Features: Multiple pages; Custom layout; Content integration; Hosting separate
+- Lump sum One-pager (Best Value): from CHF 320| Features: Single page, clear structure; Contact & CTA copy; Basic SEO & performance; Hosting separate
 - Lump sum Custom: in consultation | Features: Complex requirements; Integrations & consulting; Long-term support
 - Disclaimer: Note: The right package is tailored to your needs after a personal consultation.
 - Add-ons: Additional pages, content creation, image editing.
