@@ -104,18 +104,18 @@ body[data-theme="dark"] .site-footer {
 }
 
 .social-icon {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: rgba(var(--brand-primary-rgb), 0.12);
+  background: transparent;
   color: currentColor;
 }
 
 .social-icon svg {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   fill: currentColor;
 }
 

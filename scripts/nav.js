@@ -37,11 +37,21 @@ export function initMobileNav({ breakpoint = 900 } = {}) {
 
   overlay?.addEventListener("click", closeNav);
   navLinks.forEach((link) => link.addEventListener("click", closeNav));
+  nav.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target instanceof HTMLElement && target.closest("a")) {
+      closeNav();
+    }
+  });
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeNav();
     }
+  });
+
+  window.addEventListener("hashchange", () => {
+    closeNav();
   });
 
   window.addEventListener("resize", () => {

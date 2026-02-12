@@ -634,6 +634,41 @@ if (pricingBtns.length) {
   setPricingModel("monthly");
 }
 
+function initCtaWaitingAnimation() {
+  const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  if (!isCoarsePointer) return;
+
+  const ctas = document.querySelectorAll(".cta-primary, .process-cta");
+  if (!ctas.length) return;
+
+  const delayMs = 240;
+
+  ctas.forEach((cta) => {
+    cta.addEventListener(
+      "click",
+      (event) => {
+        if (event.defaultPrevented) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+          return;
+        }
+
+        const href = cta.getAttribute("href");
+        if (!href || href.startsWith("javascript:")) return;
+        if (cta.getAttribute("target") === "_blank") return;
+
+        event.preventDefault();
+        cta.classList.add("is-active");
+
+        window.setTimeout(() => {
+          cta.classList.remove("is-active");
+          window.location.href = href;
+        }, delayMs);
+      },
+      { passive: false }
+    );
+  });
+}
+
 window.addEventListener("resize", () => {
   const activePricingBtn = document.querySelector(
     '.pricing-btn[aria-pressed="true"]'
@@ -649,3 +684,4 @@ initMobileNav();
 initFaq({ prefersReducedMotion });
 initScrollReveal({ prefersReducedMotion });
 initProcessAnimation({ prefersReducedMotion });
+initCtaWaitingAnimation();

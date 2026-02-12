@@ -15,7 +15,7 @@
 .faq-filter-button {
   border: 1px solid var(--border);
   background: var(--bg-alt);
-  color: #FFD700;
+  color: var(--accent);
   padding: 0.8rem 1.65rem;
   border-radius: 999px;
   font-size: 0.78rem;
@@ -29,23 +29,24 @@
 }
 
 body[data-theme="light"] .faq-filter-button {
-  background: rgba(11, 20, 48, 0.92);
-  border-color: rgba(11, 20, 48, 0.92);
+  background: var(--bg-subtle-gray);
+  border-color: var(--brand-ink);
+  color: var(--brand-primary);
 }
 
 .faq-filter-button:hover,
 .faq-filter-button:focus {
-  color: #000000;
-  border-color: #FFD700;
-  background: #FFD700;
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+  background: var(--accent);
   transform: translateY(-2px);
 }
 
 .faq-filter-button.is-active,
 .faq-filter-button[aria-pressed="true"] {
-  color: #000000;
-  border-color: #FFD700;
-  background: #FFD700;
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+  background: var(--accent);
   box-shadow: 0 16px 32px rgba(2, 8, 16, 0.3);
 }
 
@@ -53,9 +54,31 @@ body[data-theme="light"] .faq-filter-button {
 .faq-filter-button.is-active:focus,
 .faq-filter-button[aria-pressed="true"]:hover,
 .faq-filter-button[aria-pressed="true"]:focus {
-  color: #000000;
-  background: #FFD700;
+  color: var(--text-on-accent);
+  background: var(--accent);
   box-shadow: 0 16px 32px rgba(2, 8, 16, 0.3);
+}
+
+body[data-theme="light"] .faq-filter-button:hover,
+body[data-theme="light"] .faq-filter-button:focus {
+  color: #ffffff;
+  border-color: var(--brand-primary);
+  background: var(--brand-primary);
+}
+
+body[data-theme="light"] .faq-filter-button.is-active,
+body[data-theme="light"] .faq-filter-button[aria-pressed="true"] {
+  color: var(--bg-subtle-gray);
+  border-color: var(--brand-primary);
+  background: var(--brand-primary);
+}
+
+body[data-theme="light"] .faq-filter-button.is-active:hover,
+body[data-theme="light"] .faq-filter-button.is-active:focus,
+body[data-theme="light"] .faq-filter-button[aria-pressed="true"]:hover,
+body[data-theme="light"] .faq-filter-button[aria-pressed="true"]:focus {
+  color: #ffffff;
+  background: var(--brand-primary);
 }
 
 .faq-grid details.is-hidden {
