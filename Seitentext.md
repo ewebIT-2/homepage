@@ -36,8 +36,8 @@ Warum eweb IT
 Pakete & Preise
 - Preismodell wählen
 - Monatsmodell Hinweis: Flexible monatliche Betreuung inklusive Hosting und Wartung.
-- Monatsmodell Business: ab CHF 50/Mt. | Leistungen: Mehrere Unterseiten; Individuelles Layout; Content-Integration; Hosting & Wartung inkl.
-- Monatsmodell Onepager (Beliebt): ab CHF 13/Mt. | Leistungen: 1 Seite, klare Struktur; Kontakt & CTA-Text; Basis-SEO & Performance; Hosting & Wartung inkl.
+- Monatsmodell Business: ab CHF 80/Mt. | Leistungen: Mehrere Unterseiten; Individuelles Layout; Content-Integration; Hosting & Wartung inkl.
+- Monatsmodell Onepager (Beliebt): ab CHF 27/Mt. | Leistungen: 1 Seite, klare Struktur; Kontakt & CTA-Text; Basis-SEO & Performance; Hosting & Wartung inkl.
 - Monatsmodell Individuell: nach Absprache | Leistungen: Komplexe Anforderungen; Integrationen & Beratung; Langfristige Betreuung
 - Einmalzahlung Hinweis: Einmalige Projektgebühr für Design und Entwicklung.
 - Einmalzahlung Business: ab CHF 900 | Leistungen: Mehrere Unterseiten; Individuelles Layout; Content-Integration; Hosting separat
@@ -159,8 +159,8 @@ Why eweb IT
 Packages & Pricing
 - Choose pricing model
 - Monthly note: Flexible monthly support including hosting and maintenance.
-- Monthly Business: from CHF 50/mo. | Features: Multiple pages; Custom layout; Content integration; Hosting & maintenance incl.
-- Monthly One-pager (Best Value): from CHF 13/mo. | Features: Single page, clear structure; Contact & CTA copy; Basic SEO & performance; Hosting & maintenance incl.
+- Monthly Business: from CHF 80/mo. | Features: Multiple pages; Custom layout; Content integration; Hosting & maintenance incl.
+- Monthly One-pager (Best Value): from CHF 27/mo. | Features: Single page, clear structure; Contact & CTA copy; Basic SEO & performance; Hosting & maintenance incl.
 - Monthly Custom: in consultation | Features: Complex requirements; Integrations & consulting; Long-term support
 - Lump sum note: One-time project fee for design and development.
 - Lump sum Business: from CHF 900 | Features: Multiple pages; Custom layout; Content integration; Hosting separate

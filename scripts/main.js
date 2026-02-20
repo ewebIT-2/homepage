@@ -83,7 +83,7 @@ const translations = {
       badge: "Beliebt",
       business: {
         name: "Business",
-        priceMonthly: "ab CHF 50/Mt.",
+        priceMonthly: "ab CHF 80/Mt.",
         priceLump: "ab CHF 900",
         item1: "Mehrere Unterseiten",
         item2: "Individuelles Layout",
@@ -93,7 +93,7 @@ const translations = {
       },
       onepager: {
         name: "Onepager",
-        priceMonthly: "ab CHF 13/Mt.",
+        priceMonthly: "ab CHF 27/Mt.",
         priceLump: "ab CHF 320",
         item1: "1 Seite, klare Struktur",
         item2: "Kontakt & CTA-Text",
@@ -290,7 +290,7 @@ const translations = {
       badge: "Best Value",
       business: {
         name: "Business",
-        priceMonthly: "from CHF 50/mo.",
+        priceMonthly: "from CHF 80/mo.",
         priceLump: "from CHF 900",
         item1: "Multiple pages",
         item2: "Custom layout",
@@ -300,7 +300,7 @@ const translations = {
       },
       onepager: {
         name: "One-pager",
-        priceMonthly: "from CHF 13/mo.",
+        priceMonthly: "from CHF 27/mo.",
         priceLump: "from CHF 320",
         item1: "Single page, clear structure",
         item2: "Contact & CTA copy",
@@ -579,7 +579,7 @@ function triggerThemeAnimation() {
 if (storedTheme) {
   setTheme(storedTheme);
 } else {
-  setTheme("dark");
+  setTheme("light");
 }
 
 if (themeToggle) {

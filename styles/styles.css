@@ -735,7 +735,7 @@ body[data-theme="dark"] .theme-toggle .icon-moon {
 
 .hero-graphic .hero-wind {
   fill: none;
-  stroke: rgba(var(--brand-primary-rgb), 0.35);
+  stroke: #1b63f0;
   stroke-width: 6;
   stroke-linecap: round;
   stroke-dasharray: 240 520;
@@ -783,28 +783,27 @@ body[data-theme="dark"] .theme-toggle .icon-moon {
 }
 
 .hero-graphic .hero-wind-back {
-  stroke: rgba(var(--brand-primary-rgb), 0.25);
+  stroke: #1b63f0;
   opacity: 0.35;
 }
 
 .hero-graphic .hero-wind-front {
-  stroke: rgba(var(--brand-primary-rgb), 0.45);
+  stroke: #1b63f0;
   opacity: 0.6;
 }
 
-body[data-theme="light"] .hero-graphic .hero-wind {
-  stroke: rgba(var(--brand-primary-rgb), 0.55);
-  opacity: 0.75;
+.hero-graphic .hero-shape {
+  fill: #1b63f0;
 }
 
-body[data-theme="light"] .hero-graphic .hero-wind-back {
-  stroke: rgba(var(--brand-primary-rgb), 0.45);
-  opacity: 0.6;
+body[data-theme="dark"] .hero-graphic .hero-wind,
+body[data-theme="dark"] .hero-graphic .hero-wind-back,
+body[data-theme="dark"] .hero-graphic .hero-wind-front {
+  stroke: #ffd700;
 }
 
-body[data-theme="light"] .hero-graphic .hero-wind-front {
-  stroke: rgba(var(--brand-primary-rgb), 0.7);
-  opacity: 0.85;
+body[data-theme="dark"] .hero-graphic .hero-shape {
+  fill: #ffd700;
 }
 
 @keyframes heroWind1 {

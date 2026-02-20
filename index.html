@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/faq.css" />
     <link rel="stylesheet" href="styles/footer.css" />
-    <link rel="icon" href="assets/images/dark.svg" data-favicon />
+    <link rel="icon" href="assets/images/light.svg" data-favicon />
     <script type="module" src="scripts/main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -66,7 +66,7 @@
       rel="stylesheet"
     />
   </head>
-  <body data-lang="de" data-theme="dark">
+  <body data-lang="de" data-theme="light">
     <a class="skip-link" href="#kontakt" data-i18n="nav.skip">Zum Inhalt springen</a>
 
     <header class="site-header" id="top">
@@ -185,12 +185,6 @@
               aria-hidden="true"
               focusable="false"
             >
-              <defs>
-                <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FFD700" />
-                  <stop offset="100%" stop-color="#1B63F0" />
-                </linearGradient>
-              </defs>
               <g class="hero-wind-back">
                 <path
                   class="hero-wind hero-wind-4"
@@ -202,8 +196,9 @@
                 />
               </g>
               <g
+                class="hero-shape"
                 transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
-                fill="url(#heroGradient)"
+                fill="#1B63F0"
                 stroke="none"
               >
                 <path
