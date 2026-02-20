@@ -84,7 +84,7 @@ const translations = {
       business: {
         name: "Business",
         priceMonthly: "ab CHF 80/Mt.",
-        priceLump: "ab CHF 900",
+        priceLump: "ab CHF 1120",
         item1: "Mehrere Unterseiten",
         item2: "Individuelles Layout",
         item3: "Content-Integration",
@@ -94,7 +94,7 @@ const translations = {
       onepager: {
         name: "Onepager",
         priceMonthly: "ab CHF 27/Mt.",
-        priceLump: "ab CHF 320",
+        priceLump: "ab CHF 420",
         item1: "1 Seite, klare Struktur",
         item2: "Kontakt & CTA-Text",
         item3: "Basis-SEO & Performance",
@@ -291,7 +291,7 @@ const translations = {
       business: {
         name: "Business",
         priceMonthly: "from CHF 80/mo.",
-        priceLump: "from CHF 900",
+        priceLump: "from CHF 1120",
         item1: "Multiple pages",
         item2: "Custom layout",
         item3: "Content integration",
@@ -301,7 +301,7 @@ const translations = {
       onepager: {
         name: "One-pager",
         priceMonthly: "from CHF 27/mo.",
-        priceLump: "from CHF 320",
+        priceLump: "from CHF 420",
         item1: "Single page, clear structure",
         item2: "Contact & CTA copy",
         item3: "Basic SEO & performance",
