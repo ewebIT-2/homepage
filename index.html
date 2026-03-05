@@ -59,6 +59,7 @@
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="icon" href="assets/images/light.svg" data-favicon />
     <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/contact.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -736,6 +737,78 @@ l-45 -24 50 42 c63 54 347 338 489 489 117 124 116 116 -6 -68 -37 -57 -68
           <div class="section-header centered">
             <h2 data-i18n="contact.title">Kontakt</h2>
           </div>
+
+          <!-- Contact form — action: replace YOUR_FORMSPREE_ID with your Formspree form ID -->
+          <form
+            id="contact-form"
+            class="contact-form"
+            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+            method="POST"
+            novalidate
+          >
+            <!-- Honeypot spam protection -->
+            <input type="text" name="_gotcha" tabindex="-1" aria-hidden="true" style="display:none" />
+
+            <div class="form-row form-row--two">
+              <div class="form-group">
+                <label for="contact-name" data-i18n="contact.form.name">Name</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  data-i18n-attr="placeholder:contact.form.namePlaceholder"
+                  placeholder="Ihr Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact-email" data-i18n="contact.form.email">E-Mail</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  data-i18n-attr="placeholder:contact.form.emailPlaceholder"
+                  placeholder="ihre@email.ch"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" data-i18n="contact.form.subject">Betreff</label>
+              <select id="contact-subject" name="subject">
+                <option value="" data-i18n="contact.form.subjectDefault">Bitte wählen…</option>
+                <option value="new-project" data-i18n="contact.form.subjectProject">Neues Projekt</option>
+                <option value="support" data-i18n="contact.form.subjectSupport">Support</option>
+                <option value="general" data-i18n="contact.form.subjectGeneral">Allgemeine Anfrage</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" data-i18n="contact.form.message">Nachricht</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                required
+                rows="5"
+                data-i18n-attr="placeholder:contact.form.messagePlaceholder"
+                placeholder="Wie können wir helfen?"
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <p id="contact-success" class="contact-status contact-status--success" hidden data-i18n="contact.form.success">Vielen Dank für Ihre Nachricht!</p>
+              <p id="contact-error" class="contact-status contact-status--error" hidden data-i18n="contact.form.error">Es gab ein Problem beim Senden.</p>
+              <button type="submit" class="contact-submit" data-i18n="contact.form.send">Senden</button>
+            </div>
+          </form>
+
+          <div class="contact-divider" aria-hidden="true">
+            <span data-i18n="contact.or">oder</span>
+          </div>
+
           <div class="contact-options">
             <div class="contact-button-wrap">
               <a class="split email-split" href="mailto:hallo@ewebit.ch">
@@ -752,7 +825,7 @@ l-45 -24 50 42 c63 54 347 338 489 489 117 124 116 116 -6 -68 -37 -57 -68
               </a>
             </div>
             <div class="contact-button-wrap">
-              <a class="split phone-split" href="tel:+41 79 785 79 09">
+              <a class="split phone-split" href="tel:+41797857909">
                 <span class="split__bg"></span>
                 <span class="split__fg">
                   <span class="split__icon" aria-hidden="true">
