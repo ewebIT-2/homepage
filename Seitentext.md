@@ -20,7 +20,7 @@ Hero
 - Headline: Mehr Kunden gewinnen mit einer professionellen Schweizer Website
 - Lead: Ihre neue Website in nur 4 Wochen – inklusive Hosting, Wartung und persönlichem Support. Keine Technik-Sorgen, nur Ergebnisse.
 - CTA: Projekt starten
-- Kontakt: hallo@ewebit.ch
+- Kontakt: hello@ewebit.ch
 
 Warum eweb IT
 - Titel: Machen Sie sich nie wieder Sorgen um Ihre Website
@@ -45,7 +45,7 @@ Pakete & Preise
 - Einmalzahlung Individuell: nach Absprache | Leistungen: Komplexe Anforderungen; Integrationen & Beratung; Langfristige Betreuung
 - Disclaimer: Hinweis: Das passende Paket wird nach einem gemeinsamen Beratungsgespräch individuell auf Ihre Bedürfnisse abgestimmt.
 - Add-ons: Zusätzliche Seiten, Content-Erstellung, Bildbearbeitung.
-- Angebot: Für ein Angebot schreiben Sie uns — hallo@ewebit.ch
+- Angebot: Für ein Angebot schreiben Sie uns — hello@ewebit.ch
 
 Ablauf
 - Badge: Schnelle Umsetzung
@@ -86,7 +86,7 @@ FAQ
 
 Kontakt
 - Titel: Kontakt
-- E-Mail: hallo@ewebit.ch
+- E-Mail: hello@ewebit.ch
 - Telefon: +41 79 785 79 09
 - Footer: Wir freuen uns auf Ihre Anfrage.
 
