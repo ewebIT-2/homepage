@@ -1,34 +1,19 @@
-export function initScrollReveal({
-  selector = ".section, .trust-card, .package-card, .process-card, .faq-grid details",
-  prefersReducedMotion = false,
-} = {}) {
-  const revealElements = document.querySelectorAll(selector);
-  if (!revealElements.length) {
-    return;
-  }
-
+/* Lightweight reveal for sections — most reveals are handled in animations.js.
+   This keeps a generic fallback for any element marked .reveal in HTML. */
+export function initScrollReveal({ prefersReducedMotion = false } = {}) {
+  const els = document.querySelectorAll(".reveal");
+  if (!els.length) return;
   if (prefersReducedMotion) {
-    revealElements.forEach((el) => el.classList.add("is-visible"));
+    els.forEach((el) => el.classList.add("is-visible"));
     return;
   }
-
-  revealElements.forEach((el) => {
-    el.classList.add("reveal");
-  });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
-
-  revealElements.forEach((el) => observer.observe(el));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  els.forEach((el) => io.observe(el));
 }

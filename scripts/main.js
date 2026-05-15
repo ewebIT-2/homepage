@@ -2,6 +2,12 @@ import { initFaq } from "./faq.js";
 import { initScrollReveal } from "./reveal.js";
 import { initMobileNav } from "./nav.js";
 import { initProcessAnimation } from "./process-animation.js";
+import {
+  initThemeToggleEffects,
+  playClick,
+  playRadialReveal,
+} from "./theme-toggle.js";
+import { initAnimations } from "./animations.js";
 
 const translations = {
   de: {
@@ -33,16 +39,45 @@ const translations = {
       dark: "Dark Mode einschalten",
     },
     hero: {
-      eyebrow: "Webdesign Agentur Zürich",
+      eyebrow: "Webdesign Studio · Zürich",
       title:
-        "Mehr Kunden gewinnen mit einer <highlight>professionellen Schweizer Website</highlight>",
+        "Mehr Kunden mit einer <highlight>professionellen Schweizer Website</highlight>",
       lead:
         "Ihre neue Website in nur 4 Wochen – inklusive Hosting, Wartung und persönlichem Support. Keine Technik-Sorgen, nur Ergebnisse.",
       cta: "Projekt starten",
+      available: "Aufträge für 2026 buchbar",
+      spec: {
+        studioLabel: "Studio",
+        studio: "Zürich · Schweiz",
+        deliveryLabel: "Lieferung",
+        delivery: "In <em>4 Wochen</em>",
+        scopeLabel: "Leistung",
+        scope: "Design · Code · Hosting",
+        estLabel: "Gegründet",
+      },
+    },
+    ticker: {
+      s1: "Zürich",
+      s2: "Bern",
+      s3: "Basel",
+      s4: "Luzern",
+      s5: "Winterthur",
+      s6: "Webdesign",
+      s7: "Hosting",
+      s8: "Wartung",
+      s9: "SEO",
+      s10: "Handcoded",
+    },
+    sectionTag: {
+      manifest: "Manifest",
+      pricing: "Pakete",
+      process: "Ablauf",
+      faq: "FAQ",
+      contact: "Kontakt",
     },
     why: {
       eyebrow: "Warum eweb IT",
-      title: "Machen Sie sich nie wieder Sorgen um Ihre Website",
+      title: "Machen Sie sich nie wieder Sorgen um Ihre <highlight>Website</highlight>",
       copy:
         "Wir bauen leistungsstarke Websites für Schweizer KMU, inkl. Hosting, Wartung und persönlichem Support. Handcoded für Performance, klar strukturiert für mehr Anfragen.",
       cards: {
@@ -74,7 +109,8 @@ const translations = {
       footer: "Vertrauen Sie auf <highlight>Schweizer Handarbeit</highlight>.",
     },
     pricing: {
-      title: "Pakete & Preise",
+      eyebrow: "Investition",
+      title: "Pakete & <highlight>Preise</highlight>",
       switch: "Preismodell wählen",
       monthly: "Monatlich",
       lump: "Einmalzahlung",
@@ -115,8 +151,9 @@ const translations = {
       quote: "Für ein Angebot schreiben Sie uns",
     },
     process: {
+      eyebrow: "Vom Briefing zum Launch",
       badge: "Schnelle Umsetzung",
-      title: "Webseite in 4 Wochen",
+      title: "Webseite in <highlight>4 Wochen</highlight>",
       lead: "Ein klarer 4‑Wochen‑Plan – von Konzept bis Go‑Live.",
       cta: "Kostenlosen Check buchen",
       note: "30 Minuten. Keine Verpflichtung. Keine Kosten.",
@@ -140,7 +177,8 @@ const translations = {
       footer: "Klare Schritte, <highlight>kurze Wege</highlight>, schnell online.",
     },
     faq: {
-      title: "Häufig gestellte Fragen",
+      eyebrow: "Antworten",
+      title: "Häufig gestellte <highlight>Fragen</highlight>",
       copy:
         "Durchstöbern Sie unsere FAQ für Antworten auf alles, was Sie über unsere Arbeit, unsere Preise, unseren Prozess und wie alles funktioniert wissen möchten.",
       filtersLabel: "FAQ nach Kategorien filtern",
@@ -194,7 +232,9 @@ const translations = {
       footer: "Kurz und <highlight>transparent</highlight> beantwortet.",
     },
     contact: {
-      title: "Kontakt",
+      eyebrow: "Anfrage starten",
+      title: "Lassen Sie uns <highlight>sprechen</highlight>",
+      copy: "Erzählen Sie uns kurz vom Projekt — Ziel, Umfang, Zeitrahmen. Wir antworten innerhalb von 24 Stunden mit ehrlichem Feedback und einem ersten Vorschlag.",
       or: "oder direkt",
       form: {
         name: "Name",
@@ -257,16 +297,45 @@ const translations = {
       dark: "Enable dark mode",
     },
     hero: {
-      eyebrow: "Web Design Agency Zurich",
+      eyebrow: "Web Design Studio · Zurich",
       title:
-        "Get more customers with a <highlight>professional Swiss website</highlight>",
+        "Win more clients with a <highlight>professional Swiss website</highlight>",
       lead:
         "Your new website in just 4 weeks – including hosting, maintenance, and personal support. No tech worries, just results.",
-      cta: "Start your project",
+      cta: "Start a project",
+      available: "Booking projects for 2026",
+      spec: {
+        studioLabel: "Studio",
+        studio: "Zurich · Switzerland",
+        deliveryLabel: "Delivery",
+        delivery: "In <em>4 weeks</em>",
+        scopeLabel: "Scope",
+        scope: "Design · Code · Hosting",
+        estLabel: "Established",
+      },
+    },
+    ticker: {
+      s1: "Zurich",
+      s2: "Bern",
+      s3: "Basel",
+      s4: "Lucerne",
+      s5: "Winterthur",
+      s6: "Web Design",
+      s7: "Hosting",
+      s8: "Maintenance",
+      s9: "SEO",
+      s10: "Hand-coded",
+    },
+    sectionTag: {
+      manifest: "Manifest",
+      pricing: "Packages",
+      process: "Process",
+      faq: "FAQ",
+      contact: "Contact",
     },
     why: {
       eyebrow: "Why eweb IT",
-      title: "Never worry about your website again",
+      title: "Never worry about your <highlight>website</highlight> again",
       copy:
         "We build high-performance websites for Swiss SMEs with hosting, maintenance, and personal support included. Hand-coded for speed, structured for more inquiries.",
       cards: {
@@ -298,7 +367,8 @@ const translations = {
       footer: "Trust <highlight>Swiss craftsmanship</highlight>.",
     },
     pricing: {
-      title: "Packages & Pricing",
+      eyebrow: "Investment",
+      title: "Packages & <highlight>Pricing</highlight>",
       switch: "Choose pricing model",
       monthly: "Monthly",
       lump: "Lump Sum",
@@ -339,8 +409,9 @@ const translations = {
       quote: "For a quote",
     },
     process: {
+      eyebrow: "From brief to launch",
       badge: "Fast delivery",
-      title: "Website in 4 weeks",
+      title: "Website in <highlight>4 weeks</highlight>",
       lead: "A clear 4-week plan from concept to go-live.",
       cta: "Book a free check",
       note: "30 minutes. No obligation. No cost.",
@@ -364,7 +435,8 @@ const translations = {
       footer: "Clear steps, <highlight>short feedback loops</highlight>, fast go-live.",
     },
     faq: {
-      title: "Frequently Asked Questions",
+      eyebrow: "Answers",
+      title: "Frequently Asked <highlight>Questions</highlight>",
       copy:
         "Browse our FAQ for answers to everything you would like to know about what we do, what we charge, our process, and how everything works.",
       filtersLabel: "Filter FAQs by category",
@@ -418,7 +490,9 @@ const translations = {
       footer: "Short and <highlight>transparent</highlight> answers.",
     },
     contact: {
-      title: "Contact",
+      eyebrow: "Start an inquiry",
+      title: "Let's <highlight>talk</highlight>",
+      copy: "Tell us briefly about the project — goal, scope, timeline. We respond within 24 hours with honest feedback and a first proposal.",
       or: "or directly",
       form: {
         name: "Name",
@@ -472,7 +546,7 @@ function resolveKey(obj, path) {
 
 function formatMarkup(value) {
   return String(value)
-    .replace(/<highlight>/g, '<span class="highlight">')
+    .replace(/<highlight>/g, '<span class="hl">')
     .replace(/<\/highlight>/g, "</span>")
     .replace(/<year>/g, '<span class="footer-year" data-current-year>')
     .replace(/<\/year>/g, "</span>");
@@ -557,6 +631,8 @@ function setLanguage(lang) {
       updateLangIndicator(button);
     }
   });
+
+  document.dispatchEvent(new CustomEvent("ewebit:lang-changed", { detail: { lang } }));
 }
 
 function updateThemeLabel(lang = document.body.getAttribute("data-lang") || "de") {
@@ -610,16 +686,21 @@ function triggerThemeAnimation() {
   themeToggle.classList.add("is-animating");
 }
 
-if (storedTheme) {
+const urlTheme = new URLSearchParams(location.search).get("theme");
+if (urlTheme === "dark" || urlTheme === "light") {
+  setTheme(urlTheme);
+} else if (storedTheme) {
   setTheme(storedTheme);
 } else {
-  setTheme("light");
+  setTheme("dark");
 }
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     const nextTheme =
       document.body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    playClick();
+    playRadialReveal(themeToggle, nextTheme);
     setTheme(nextTheme);
     triggerThemeAnimation();
   });
@@ -631,8 +712,8 @@ if (themeToggle) {
 }
 
 const pricingBtns = document.querySelectorAll("[data-pricing-toggle]");
-const monthlyGrid = document.getElementById("pricing-monthly");
-const lumpSumGrid = document.getElementById("pricing-lump-sum");
+const pricingPanes = document.querySelectorAll("[data-pricing-pane]");
+const pricingContextEl = document.querySelector("[data-pricing-context]");
 
 function updatePricingIndicator(activeButton) {
   const pricingSwitch = activeButton.closest(".pricing-switch");
@@ -641,19 +722,22 @@ function updatePricingIndicator(activeButton) {
 }
 
 function setPricingModel(type) {
-  const isMonthly = type === "monthly";
-
   pricingBtns.forEach((btn) => {
     const isActive = btn.getAttribute("data-pricing-toggle") === type;
     btn.setAttribute("aria-pressed", isActive ? "true" : "false");
-    if (isActive) {
-      updatePricingIndicator(btn);
-    }
+    if (isActive) updatePricingIndicator(btn);
   });
 
-  if (monthlyGrid && lumpSumGrid) {
-    monthlyGrid.classList.toggle("is-hidden", !isMonthly);
-    lumpSumGrid.classList.toggle("is-hidden", isMonthly);
+  pricingPanes.forEach((pane) => {
+    pane.classList.toggle("is-active", pane.dataset.pricingPane === type);
+  });
+
+  if (pricingContextEl) {
+    const lang = document.body.getAttribute("data-lang") || "de";
+    const ctxKey = type === "monthly" ? "pricing.contextMonthly" : "pricing.contextLump";
+    pricingContextEl.setAttribute("data-i18n", ctxKey);
+    const value = resolveKey(translations[lang] || translations.de, ctxKey);
+    if (value !== undefined) pricingContextEl.textContent = String(value);
   }
 }
 
@@ -668,39 +752,19 @@ if (pricingBtns.length) {
   setPricingModel("monthly");
 }
 
-function initCtaWaitingAnimation() {
-  const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
-  if (!isCoarsePointer) return;
-
-  const ctas = document.querySelectorAll(".cta-primary, .process-cta");
-  if (!ctas.length) return;
-
-  const delayMs = 240;
-
-  ctas.forEach((cta) => {
-    cta.addEventListener(
-      "click",
-      (event) => {
-        if (event.defaultPrevented) return;
-        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
-          return;
-        }
-
-        const href = cta.getAttribute("href");
-        if (!href || href.startsWith("javascript:")) return;
-        if (cta.getAttribute("target") === "_blank") return;
-
-        event.preventDefault();
-        cta.classList.add("is-active");
-
-        window.setTimeout(() => {
-          cta.classList.remove("is-active");
-          window.location.href = href;
-        }, delayMs);
-      },
-      { passive: false }
-    );
-  });
+function initManifestStagger() {
+  const grid = document.querySelector(".manifest-cards");
+  if (!grid) return;
+  if (prefersReducedMotion) { grid.classList.add("is-visible"); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.18 });
+  io.observe(grid);
 }
 
 window.addEventListener("resize", () => {
@@ -718,4 +782,6 @@ initMobileNav();
 initFaq({ prefersReducedMotion });
 initScrollReveal({ prefersReducedMotion });
 initProcessAnimation({ prefersReducedMotion });
-initCtaWaitingAnimation();
+initThemeToggleEffects({ sound: true });
+initAnimations({ prefersReducedMotion });
+initManifestStagger();

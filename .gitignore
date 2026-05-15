@@ -1,0 +1,23 @@
+# Dev artefacts produced by serve.mjs / screenshot.mjs
+temporary screenshots/
+.chrome-temp/
+
+# Local dev helpers (Node scripts not shipped to production)
+screenshot.mjs
+serve.mjs
+
+# Node
+node_modules/
+
+# Claude Code / agent state
+.claude/
+CLAUDE.md
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
