@@ -5,6 +5,8 @@ temporary screenshots/
 # Local dev helpers (Node scripts not shipped to production)
 screenshot.mjs
 serve.mjs
+shot-full.mjs
+shot-sections.mjs
 
 # Node
 node_modules/

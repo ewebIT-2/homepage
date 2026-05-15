@@ -143,10 +143,16 @@
 .footer-mark { color: var(--ink-3); }
 
 @media (max-width: 960px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 }
-@media (max-width: 560px) {
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 420px) {
   .footer-grid { grid-template-columns: 1fr; }
   .footer-watermark span { font-size: clamp(120px, 50vw, 280px); }
+  .footer-bottom { gap: 12px; justify-content: flex-start; }
+  .footer-contact a { font-size: 17px; }
 }

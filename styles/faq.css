@@ -230,4 +230,18 @@
     padding: 22px 4px;
   }
   .faq-list details .faq-content > p { margin: 0 4px 24px 50px; }
+  .faq-filters { gap: 6px; margin-bottom: 24px; padding-bottom: 24px; }
+  .faq-filter-button { padding: 7px 12px; font-size: 10px; }
+  .faq-q-plus { width: 18px; height: 18px; }
+  .faq-toggle { padding: 12px 18px; font-size: 10px; }
+}
+
+@media (max-width: 420px) {
+  .faq-list details > summary {
+    grid-template-columns: 28px 1fr auto;
+    gap: 10px;
+    padding: 20px 2px;
+  }
+  .faq-q-num { font-size: 10px; }
+  .faq-list details .faq-content > p { margin: 0 2px 20px 38px; font-size: 14.5px; }
 }

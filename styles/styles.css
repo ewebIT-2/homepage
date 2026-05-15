@@ -196,6 +196,7 @@ em { font-style: italic; color: var(--accent); font-family: var(--f-display); fo
 .site-header.is-shrunk { padding-top: 10px; padding-bottom: 10px; }
 
 .header-inner {
+  position: relative;
   width: 100%;
   max-width: var(--maxw);
   display: grid;
@@ -203,15 +204,25 @@ em { font-style: italic; color: var(--accent); font-family: var(--f-display); fo
   align-items: center;
   gap: 24px;
   padding: 10px 14px 10px 18px;
-  background: rgba(11, 10, 7, 0.55);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-pill);
   pointer-events: auto;
-  transition: background 320ms var(--ease-soft), border-color 320ms var(--ease-soft);
+  transition: border-color 320ms var(--ease-soft);
 }
-[data-theme='light'] .header-inner { background: rgba(242, 237, 222, 0.7); }
+/* Backdrop-filter lives on a ::before so it doesn't create a containing
+   block for the position:fixed mobile nav drawer (Chromium quirk). */
+.header-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(11, 10, 7, 0.55);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  z-index: -1;
+  transition: background 320ms var(--ease-soft);
+}
+[data-theme='light'] .header-inner::before { background: rgba(242, 237, 222, 0.7); }
 
 .logo {
   display: inline-flex;
@@ -1333,6 +1344,7 @@ body.nav-open .nav-overlay { opacity: 1; pointer-events: auto; }
    RESPONSIVE
    ========================================================================= */
 
+/* ── TABLET (≤ 960px): collapse nav into drawer, stack two-column grids ── */
 @media (max-width: 960px) {
   .site-nav {
     position: fixed;
@@ -1341,46 +1353,101 @@ body.nav-open .nav-overlay { opacity: 1; pointer-events: auto; }
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    padding: 80px 32px;
+    padding: 96px 40px 40px;
     transform: translateY(-100%);
     transition: transform 360ms var(--ease-out-quint);
     z-index: 75;
+    overflow-y: auto;
   }
   body.nav-open .site-nav { transform: translateY(0); }
   .site-nav a {
     font-family: var(--f-display);
-    font-size: 36px;
-    padding: 8px 0;
+    font-size: clamp(32px, 7vw, 48px);
+    padding: 6px 0;
     font-weight: 400;
     flex-direction: row;
-    gap: 16px;
+    gap: 18px;
+    color: var(--ink);
   }
-  .nav-link__num { font-size: 12px; }
+  .site-nav a:hover { background: transparent; color: var(--accent); }
+  .nav-link__num { font-size: 11px; color: var(--ink-3); align-self: center; }
   .nav-toggle { display: inline-flex; }
 
+  /* keep header pill solid behind the open drawer so toggles stay reachable */
+  body.nav-open .header-inner::before { background: var(--bg); }
+  /* lift header controls above the fullscreen drawer so logo + close stay visible */
+  .logo, .header-actions { position: relative; z-index: 76; }
+
+  .hero { padding-top: clamp(110px, 16vh, 160px); }
   .hero-bottom { grid-template-columns: 1fr; gap: 40px; }
-  .hero-spec { max-width: 480px; }
+  .hero-spec { max-width: 520px; width: 100%; }
   .hero-index { display: none; }
 
   .manifest-grid { grid-template-columns: 1fr; gap: 56px; }
   .manifest-head { position: static; }
-  .manifest-cards { grid-template-columns: 1fr; }
 
   .pricing-pane { grid-template-columns: 1fr; }
 
   .process-grid { grid-template-columns: 1fr; gap: 56px; }
   .process-intro { position: static; }
 
-  .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .contact-head { position: static; }
 }
 
+/* ── TABLET PORTRAIT (601–960px): keep card grids at 2 cols where it helps ── */
+@media (min-width: 601px) and (max-width: 960px) {
+  .manifest-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pricing-pane { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pricing-pane > .card--pricing:nth-child(3) { grid-column: 1 / -1; }
+}
+
+/* ── TIGHT MOBILE (≤ 600px): single-column everywhere ── */
+@media (max-width: 600px) {
+  .manifest-cards { grid-template-columns: 1fr; }
+}
+
+/* ── SMALL MOBILE (≤ 560px): tighten header, marquee fades, hide DE/EN to declutter ── */
 @media (max-width: 560px) {
-  .header-inner { gap: 12px; padding: 8px 10px 8px 14px; }
+  .header-inner { gap: 10px; padding: 6px 10px 6px 14px; }
   .lang-switch, .theme-toggle { display: inline-flex; }
 
   .marquee__track { gap: 20px; }
   .marquee::before, .marquee::after { width: 60px; }
+
+  .section-marker { padding-bottom: 24px; margin-bottom: 36px; }
+  .section-marker__tag { padding: 3px 8px; }
+
+  .hero { padding-bottom: clamp(36px, 5vh, 60px); }
+  .hero-meta-top { padding-bottom: 24px; gap: 12px; }
+  .hero-stage { padding-top: clamp(28px, 4vh, 48px); }
+  .hero-spec__row { grid-template-columns: 80px 1fr; gap: 16px; padding: 10px 0; }
+
+  .pricing-head { margin-bottom: 36px; }
+  .pricing-footer { padding-top: 24px; gap: 20px; }
+
+  .process-step { padding: 24px 0 28px 48px; }
+  .process-step__dot { left: -42px; width: 8px; height: 8px; }
+  .process-step::before { left: 12px; }
+
+  .contact-direct li { grid-template-columns: 76px 1fr; gap: 14px; padding: 14px 0; }
+  .contact-form { padding: 24px 20px; gap: 20px; }
+  .form-row { gap: 14px; }
+
+  .page-veil { padding: 24px 20px; }
+}
+
+/* ── VERY SMALL (≤ 380px): squeeze header further, keep all controls reachable ── */
+@media (max-width: 380px) {
+  .header-inner { padding: 6px 8px 6px 12px; gap: 6px; }
+  .logo-text { font-size: 12px; }
+  .lang-btn { padding: 5px 9px; font-size: 10px; }
+  .theme-toggle { width: 32px; height: 32px; }
+  .theme-toggle-svg { width: 16px; height: 16px; }
+  .nav-toggle { width: 34px; height: 34px; }
+
+  .hero-spec__row { grid-template-columns: 72px 1fr; gap: 12px; }
+  .marquee__track { font-size: clamp(30px, 8vw, 44px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
