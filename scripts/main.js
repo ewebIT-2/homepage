@@ -12,17 +12,18 @@ import { initAnimations } from "./animations.js";
 const translations = {
   de: {
     meta: {
-      title: "EWEB IT | Webdesign Studio Zürich - Professionelle Websites für Schweizer KMU",
+      title: "EWEB IT | Lokaler IT-Partner & Webdesign Studio Zürich für Schweizer KMU",
       description:
-        "Webdesign Studio Zürich - günstige, professionelle Websites für KMU in der Schweiz. Handcoded, SEO-stark, mit Hosting & Wartung inklusive.",
+        "Lokaler IT-Partner für Schweizer KMU: Webdesign, Hosting, Microsoft 365, IT-Support, Backup und Cybersecurity — alles aus einer Hand, in der Schweiz.",
       keywords:
-        "Webdesign Studio Zürich, Günstige Websites Schweiz, Webdesign Agentur Zürich, Website erstellen lassen, KMU Webseite",
+        "IT-Partner KMU, Webdesign Studio Zürich, IT-Support Schweiz, Microsoft 365 KMU, Hosting Schweiz, Managed IT Schweiz, Cybersecurity KMU, Webdesign Schweiz",
     },
     nav: {
       skip: "Zum Inhalt springen",
       aria: "Hauptnavigation",
       toggle: "Menü",
       why: "Warum wir",
+      services: "Leistungen",
       packages: "Pakete",
       process: "Ablauf",
       faq: "FAQ",
@@ -39,11 +40,13 @@ const translations = {
       dark: "Dark Mode einschalten",
     },
     hero: {
-      eyebrow: "Webdesign Studio · Zürich",
+      eyebrow: "Webdesign · IT-Partner · Zürich",
       title:
         "Mehr Kunden mit einer <highlight>professionellen Schweizer Website</highlight>",
       lead:
         "Ihre neue Website in nur 4 Wochen – inklusive Hosting, Wartung und persönlichem Support. Keine Technik-Sorgen, nur Ergebnisse.",
+      tagline:
+        "Vom Webdesign zum IT-Partner — Hosting, Support, Microsoft 365 und mehr. Alles aus einer Hand, lokal in der Schweiz.",
       cta: "Projekt starten",
       available: "Aufträge für 2026 buchbar",
       spec: {
@@ -70,10 +73,143 @@ const translations = {
     },
     sectionTag: {
       manifest: "Manifest",
+      services: "Leistungen",
       pricing: "Pakete",
+      care: "Care-Pläne",
       process: "Ablauf",
+      work: "Referenzen",
+      founder: "Gründer",
       faq: "FAQ",
       contact: "Kontakt",
+    },
+    trust: {
+      eyebrow: "Vertrauenssignale",
+      items: {
+        swiss: { label: "Standort", value: "100% Schweiz" },
+        compliance: { label: "Datenschutz", value: "DSG-konform" },
+        response: { label: "Reaktion", value: "< 2h Geschäftszeit" },
+        contact: { label: "Erreichbar", value: "Persönlich · direkt" },
+      },
+    },
+    services: {
+      eyebrow: "Was wir tun",
+      title: "Drei Säulen — <highlight>eine</highlight> Beziehung",
+      copy:
+        "Vom ersten Pixel bis zur laufenden Betreuung. Wir wachsen mit Ihren Anforderungen und holen Schweizer Spezialisten dazu, wenn ein Projekt es verlangt — transparent, in Ihrem Namen.",
+      pillars: {
+        web: {
+          tag: "Direkt von uns",
+          title: "Web & Online-Präsenz",
+          item1: "Handcoded Websites & Landingpages",
+          item2: "Hosting in der Schweiz",
+          item3: "Basis- & Local-SEO",
+          item4: "Domain, E-Mail, Performance",
+        },
+        care: {
+          tag: "Direkt von uns",
+          title: "Managed IT-Care",
+          item1: "Microsoft 365 / Google Workspace",
+          item2: "IT-Support für Mitarbeitende",
+          item3: "Backup & Endpoint-Schutz",
+          item4: "Monitoring & Patch-Management",
+        },
+        advisory: {
+          tag: "Mit Schweizer Partnern",
+          title: "IT-Beratung & Projekte",
+          item1: "Cloud-Migration · Azure / M365",
+          item2: "Cybersecurity-Assessment",
+          item3: "Individuelle Software & Integrationen",
+          item4: "NIS2- & DSG-Readiness",
+        },
+      },
+      footer: "Eine Hauptansprechperson — <highlight>für alles</highlight>.",
+    },
+    care: {
+      eyebrow: "Laufende Betreuung",
+      title: "Care-<highlight>Pläne</highlight>",
+      copy:
+        "Ihre IT verdient mehr als einen Anruf im Notfall. Monatliche Betreuung mit klaren Leistungen, Reaktionszeiten und transparenter Abrechnung.",
+      badge: "Beliebt",
+      currency: "CHF",
+      period: "/Monat",
+      annualNote: "10% Rabatt bei jährlicher Abrechnung. SLA werden im Vertrag schriftlich festgehalten.",
+      basic: {
+        name: "Care Basic",
+        price: "ab 49",
+        for: "Für kleine Webauftritte",
+        item1: "Hosting & Website-Wartung",
+        item2: "Monatlicher Status-Check",
+        item3: "E-Mail-Support",
+        item4: "DSG-konformer Backup",
+      },
+      plus: {
+        name: "Care Plus",
+        price: "ab 149",
+        for: "Für Teams bis 5 Personen",
+        item1: "Alles aus Basic",
+        item2: "Microsoft 365 Verwaltung",
+        item3: "Backup-Monitoring",
+        item4: "2h Support pro Monat",
+        item5: "Telefon-Hotline",
+      },
+      pro: {
+        name: "Care Pro",
+        price: "ab 349",
+        for: "Für Teams bis 10 Personen",
+        item1: "Alles aus Plus",
+        item2: "Endpoint-Schutz",
+        item3: "On- & Offboarding",
+        item4: "6h Support pro Monat",
+        item5: "Quartals-IT-Review",
+      },
+      custom: {
+        name: "Care Custom",
+        price: "ab 800",
+        for: "Ab 10 Arbeitsplätzen",
+        item1: "Massgeschneiderter Retainer",
+        item2: "Definierte SLA",
+        item3: "Dediziertes Onboarding",
+        item4: "Strategie-Beratung",
+      },
+      footer: "Klare Leistungen, <highlight>schriftliche SLA</highlight>, keine Überraschungen.",
+    },
+    work: {
+      eyebrow: "Worte unserer Kunden",
+      title: "Was Schweizer KMU <highlight>sagen</highlight>",
+      copy:
+        "Wir wachsen mit Praxen, Kanzleien, Treuhand- und Handwerksbetrieben. Hier ein Auszug aus realer Zusammenarbeit.",
+      quoteEyebrow: "Stimme",
+      quote:
+        "Endlich ein IT-Partner, der zuhört und in unserer Sprache spricht. Website, Hosting und unsere Microsoft-365-Verwaltung an einem Ort — Antworten innerhalb von Stunden, nicht Wochen.",
+      attribution: "Praxisinhaberin · Zahnarztpraxis Zürich",
+      attributionNote: "Name auf Wunsch anonymisiert",
+      caseEyebrow: "Mini-Case",
+      caseIndustry: "Zahnarztpraxis · Zürich",
+      caseChallengeLabel: "Ausgangslage",
+      caseChallenge: "Veraltete Website, keine Online-Terminanfrage, IT-Support per Zufallsprinzip.",
+      caseApproachLabel: "Vorgehen",
+      caseApproach: "Neue Website in 4 Wochen, Microsoft-365-Aufräumarbeit, Care-Plus-Retainer mit klarer SLA.",
+      caseOutcomeLabel: "Ergebnis",
+      caseOutcome: "+40% Online-Terminanfragen, definierte IT-Reaktionszeit, ein Ansprechpartner für alles.",
+      placeholder: "Platzhalter — wird durch reale Referenz mit Einverständnis ersetzt.",
+    },
+    founder: {
+      eyebrow: "Wer ist eweb IT?",
+      title: "Ein Gesicht. <highlight>Eine</highlight> Verantwortung.",
+      para1:
+        "eweb IT wurde 2026 in Zürich gegründet — aus Frust über das, was Schweizer KMU im IT-Bereich oft erleben: lange Wartezeiten, intransparente Rechnungen, unverständliche Sprache. Wir machen es anders. Direkt, lokal, in Ihrer Sprache.",
+      para2:
+        "Sie sprechen immer mit derselben Person. Keine Tickets, keine Eskalationsstufen, keine ausgelagerten Hotlines. Wenn ein Spezialist gebraucht wird, holen wir ihn — transparent und in Ihrem Namen.",
+      portraitAlt: "Porträt des Gründers von eweb IT",
+      name: "Vorname Nachname",
+      role: "Gründer & Inhaber · Zürich",
+      tagline: "Persönlich. Lokal. Verantwortlich.",
+      stats: {
+        location: { label: "Studio", value: "Zürich, CH" },
+        founded: { label: "Gegründet", value: "2026" },
+        languages: { label: "Sprachen", value: "DE · EN" },
+        focus: { label: "Fokus", value: "Schweizer KMU" },
+      },
     },
     why: {
       eyebrow: "Warum eweb IT",
@@ -188,6 +324,7 @@ const translations = {
         ownership: "Besitz & Betrieb",
         support: "Support",
         seo: "SEO & Datenschutz",
+        it: "IT-Services",
       },
       pricing: {
         q1: "Was kostet es und was ist im Preis enthalten?",
@@ -229,6 +366,18 @@ const translations = {
         q3: "Wie messen wir den Erfolg der Website?",
         a3: "Wir definieren gemeinsam Ziele wie Anfragen, Anrufe oder Buchungen und richten datenschutzkonformes Tracking ein.",
       },
+      it: {
+        q1: "Übernehmen Sie unsere bestehende IT?",
+        a1: "Ja. Wir übernehmen schrittweise — beginnend mit einer kostenlosen IT-Standortbestimmung. Sie behalten jederzeit volle Kontrolle über Zugriffe, Daten und Verträge.",
+        q2: "Arbeiten Sie mit Microsoft 365 und Google Workspace?",
+        a2: "Ja. Wir richten beide Plattformen ein, migrieren bestehende Konten und übernehmen die laufende Verwaltung — Lizenzen, Postfächer, Sicherheit, Onboarding.",
+        q3: "Wie schnell reagieren Sie bei einem IT-Notfall?",
+        a3: "Bei kritischen Störungen reagieren wir innerhalb von 2 Stunden zu Geschäftszeiten. Konkrete SLA werden im Care-Vertrag schriftlich festgehalten.",
+        q4: "Was ist in einem Care-Plan enthalten?",
+        a4: "Hosting, Wartung, Microsoft-365-Verwaltung, Backup-Monitoring und Support-Stunden — je nach Tarif. Die vollständige Aufschlüsselung finden Sie im Care-Plan-Abschnitt oben.",
+        q5: "Liefern Sie auch Cybersecurity und Cloud-Migration?",
+        a5: "Ja — über Partnerschaften mit Schweizer Spezialisten. Wir koordinieren, dokumentieren und bleiben Ihre Hauptansprechperson. Vollständig transparent abgerechnet.",
+      },
       footer: "Kurz und <highlight>transparent</highlight> beantwortet.",
     },
     contact: {
@@ -236,6 +385,14 @@ const translations = {
       title: "Lassen Sie uns <highlight>sprechen</highlight>",
       copy: "Erzählen Sie uns kurz vom Projekt — Ziel, Umfang, Zeitrahmen. Wir antworten innerhalb von 24 Stunden mit ehrlichem Feedback und einem ersten Vorschlag.",
       or: "oder direkt",
+      book: {
+        eyebrow: "Schnell und unverbindlich",
+        title: "Buchen Sie eine 30‑min <highlight>IT‑Standortbestimmung</highlight>",
+        copy: "Wir hören uns Ihre Situation an, geben ehrliches Feedback und zeigen, wo der schnellste Hebel liegt. Kostenlos, ohne Verkaufsdruck.",
+        cta: "Termin buchen",
+        note: "30 Minuten · kostenlos · in DE oder EN",
+        alt: "oder schreiben Sie uns",
+      },
       form: {
         name: "Name",
         namePlaceholder: "Ihr Name",
@@ -257,7 +414,7 @@ const translations = {
     footer: {
       aboutTitle: "Über uns",
       about:
-        "Schweizer Webdesign-Studio für schnelle, klare und wartbare Websites für KMU. Standort: Schweiz.",
+        "Schweizer Webdesign-Studio für schnelle, klare und wartbare Websites für KMU — und Ihr lokaler IT-Partner für Hosting, Support, Microsoft 365 und mehr. Standort: Schweiz.",
       quickTitle: "Quick Links",
       legalTitle: "Rechtliches",
       socialTitle: "Social",
@@ -270,17 +427,18 @@ const translations = {
   },
   en: {
     meta: {
-      title: "EWEB IT | Web Design Agency Zurich - Professional Websites for Swiss SMEs",
+      title: "EWEB IT | Local IT Partner & Web Design Studio Zurich for Swiss SMBs",
       description:
-        "Web design studio Zurich - affordable, professional websites for SMEs in Switzerland. Hand-coded, SEO-ready, with hosting & maintenance included.",
+        "Local IT partner for Swiss SMBs: web design, hosting, Microsoft 365, IT support, backup, and cybersecurity — all from one source, in Switzerland.",
       keywords:
-        "Web design agency Zurich, cheap websites Switzerland, professional web design, Swiss SME website, website design Zurich",
+        "Swiss IT partner, Web design Zurich, IT support Switzerland, Microsoft 365 SMB, hosting Switzerland, managed IT Switzerland, cybersecurity SMB",
     },
     nav: {
       skip: "Skip to content",
       aria: "Primary navigation",
       toggle: "Open menu",
       why: "Why Us",
+      services: "Services",
       packages: "Packages",
       process: "Process",
       faq: "FAQ",
@@ -297,11 +455,13 @@ const translations = {
       dark: "Enable dark mode",
     },
     hero: {
-      eyebrow: "Web Design Studio · Zurich",
+      eyebrow: "Web Design · IT Partner · Zurich",
       title:
         "Win more clients with a <highlight>professional Swiss website</highlight>",
       lead:
         "Your new website in just 4 weeks – including hosting, maintenance, and personal support. No tech worries, just results.",
+      tagline:
+        "Grown from a web design studio into your local IT partner — hosting, support, Microsoft 365 and more. All from one source, in Switzerland.",
       cta: "Start a project",
       available: "Booking projects for 2026",
       spec: {
@@ -328,10 +488,143 @@ const translations = {
     },
     sectionTag: {
       manifest: "Manifest",
+      services: "Services",
       pricing: "Packages",
+      care: "Care Plans",
       process: "Process",
+      work: "Selected Work",
+      founder: "Founder",
       faq: "FAQ",
       contact: "Contact",
+    },
+    trust: {
+      eyebrow: "Trust signals",
+      items: {
+        swiss: { label: "Location", value: "100% Swiss" },
+        compliance: { label: "Privacy", value: "FADP-compliant" },
+        response: { label: "Response", value: "< 2h business hours" },
+        contact: { label: "Reachable", value: "Direct · personal" },
+      },
+    },
+    services: {
+      eyebrow: "What we do",
+      title: "Three pillars — <highlight>one</highlight> relationship",
+      copy:
+        "From the first pixel to ongoing care. We grow with your needs and bring in Swiss specialists when a project requires them — transparently, on your behalf.",
+      pillars: {
+        web: {
+          tag: "Delivered by us",
+          title: "Web & Online Presence",
+          item1: "Hand-coded websites & landing pages",
+          item2: "Hosting in Switzerland",
+          item3: "Baseline & local SEO",
+          item4: "Domain, email, performance",
+        },
+        care: {
+          tag: "Delivered by us",
+          title: "Managed IT Care",
+          item1: "Microsoft 365 / Google Workspace",
+          item2: "Workforce IT support",
+          item3: "Backup & endpoint protection",
+          item4: "Monitoring & patch management",
+        },
+        advisory: {
+          tag: "With Swiss partners",
+          title: "IT Advisory & Projects",
+          item1: "Cloud migration · Azure / M365",
+          item2: "Cybersecurity assessment",
+          item3: "Custom software & integrations",
+          item4: "NIS2 & FADP readiness",
+        },
+      },
+      footer: "One primary contact — <highlight>for everything</highlight>.",
+    },
+    care: {
+      eyebrow: "Ongoing care",
+      title: "Care <highlight>Plans</highlight>",
+      copy:
+        "Your IT deserves more than an emergency call. Monthly care with clear deliverables, response times, and transparent billing.",
+      badge: "Most popular",
+      currency: "CHF",
+      period: "/month",
+      annualNote: "10% discount on annual billing. SLAs are committed to in writing in the Care contract.",
+      basic: {
+        name: "Care Basic",
+        price: "from 49",
+        for: "For small web presences",
+        item1: "Hosting & website maintenance",
+        item2: "Monthly status check",
+        item3: "Email support",
+        item4: "FADP-compliant backup",
+      },
+      plus: {
+        name: "Care Plus",
+        price: "from 149",
+        for: "For teams up to 5 people",
+        item1: "Everything in Basic",
+        item2: "Microsoft 365 administration",
+        item3: "Backup monitoring",
+        item4: "2h support per month",
+        item5: "Phone hotline",
+      },
+      pro: {
+        name: "Care Pro",
+        price: "from 349",
+        for: "For teams up to 10 people",
+        item1: "Everything in Plus",
+        item2: "Endpoint protection",
+        item3: "On- & offboarding",
+        item4: "6h support per month",
+        item5: "Quarterly IT review",
+      },
+      custom: {
+        name: "Care Custom",
+        price: "from 800",
+        for: "10+ workstations",
+        item1: "Tailored retainer",
+        item2: "Defined SLAs",
+        item3: "Dedicated onboarding",
+        item4: "Strategy consulting",
+      },
+      footer: "Clear deliverables, <highlight>written SLAs</highlight>, no surprises.",
+    },
+    work: {
+      eyebrow: "From our clients",
+      title: "What Swiss SMBs <highlight>say</highlight>",
+      copy:
+        "We grow alongside dental practices, law firms, fiduciary offices, and trades businesses. Below: an excerpt from real engagements.",
+      quoteEyebrow: "Voice",
+      quote:
+        "Finally an IT partner who listens and speaks our language. Website, hosting, and our Microsoft 365 administration in one place — answers within hours, not weeks.",
+      attribution: "Practice Owner · Dental Practice Zurich",
+      attributionNote: "Name anonymised on request",
+      caseEyebrow: "Mini case",
+      caseIndustry: "Dental practice · Zurich",
+      caseChallengeLabel: "Starting point",
+      caseChallenge: "Outdated website, no online appointment requests, ad-hoc IT support.",
+      caseApproachLabel: "Approach",
+      caseApproach: "New website in 4 weeks, Microsoft 365 cleanup, Care Plus retainer with clear SLA.",
+      caseOutcomeLabel: "Outcome",
+      caseOutcome: "+40% online appointment requests, defined IT response time, one contact for everything.",
+      placeholder: "Placeholder — will be replaced with a real client reference once consent is given.",
+    },
+    founder: {
+      eyebrow: "Who is eweb IT?",
+      title: "One face. <highlight>One</highlight> accountable owner.",
+      para1:
+        "eweb IT was founded in 2026 in Zurich — out of frustration with what Swiss SMBs often experience in IT: long wait times, opaque invoices, technical jargon. We do it differently. Direct, local, in your language.",
+      para2:
+        "You always talk to the same person. No tickets, no escalation tiers, no outsourced hotlines. When a specialist is needed, we bring them in — transparently and on your behalf.",
+      portraitAlt: "Portrait of the founder of eweb IT",
+      name: "First Last",
+      role: "Founder & Owner · Zurich",
+      tagline: "Personal. Local. Accountable.",
+      stats: {
+        location: { label: "Studio", value: "Zurich, CH" },
+        founded: { label: "Founded", value: "2026" },
+        languages: { label: "Languages", value: "DE · EN" },
+        focus: { label: "Focus", value: "Swiss SMBs" },
+      },
     },
     why: {
       eyebrow: "Why eweb IT",
@@ -446,6 +739,7 @@ const translations = {
         ownership: "Ownership",
         support: "Support",
         seo: "SEO & Privacy",
+        it: "IT Services",
       },
       pricing: {
         q1: "What does it cost and what is included?",
@@ -487,6 +781,18 @@ const translations = {
         q3: "How do we measure website success?",
         a3: "We define goals such as inquiries, calls, or bookings and set up privacy-compliant tracking.",
       },
+      it: {
+        q1: "Do you take over our existing IT?",
+        a1: "Yes. We take over step by step — starting with a free IT health check. You retain full control over access, data, and contracts at all times.",
+        q2: "Do you work with Microsoft 365 and Google Workspace?",
+        a2: "Yes. We set up either platform, migrate existing accounts, and handle ongoing administration — licences, mailboxes, security, onboarding.",
+        q3: "How fast do you respond to an IT emergency?",
+        a3: "For critical incidents we respond within 2 business hours. Concrete SLAs are committed to in writing in the Care contract.",
+        q4: "What is included in a Care plan?",
+        a4: "Hosting, maintenance, Microsoft 365 administration, backup monitoring, and support hours — depending on the tier. See the Care Plans section above for the full breakdown.",
+        q5: "Do you also deliver cybersecurity and cloud migration?",
+        a5: "Yes — through partnerships with Swiss specialists. We coordinate, document, and remain your primary contact. Billed fully transparently.",
+      },
       footer: "Short and <highlight>transparent</highlight> answers.",
     },
     contact: {
@@ -494,6 +800,14 @@ const translations = {
       title: "Let's <highlight>talk</highlight>",
       copy: "Tell us briefly about the project — goal, scope, timeline. We respond within 24 hours with honest feedback and a first proposal.",
       or: "or directly",
+      book: {
+        eyebrow: "Quick and no obligation",
+        title: "Book a 30‑min <highlight>IT health check</highlight>",
+        copy: "We listen to your situation, give honest feedback, and show where the quickest leverage lies. Free, no sales pressure.",
+        cta: "Book a slot",
+        note: "30 minutes · free · in DE or EN",
+        alt: "or send us a message",
+      },
       form: {
         name: "Name",
         namePlaceholder: "Your name",
@@ -515,7 +829,7 @@ const translations = {
     footer: {
       aboutTitle: "About",
       about:
-        "Swiss web design studio for fast, clear, and maintainable websites for SMEs. Location: Switzerland.",
+        "Swiss web design studio for fast, clear, and maintainable websites for SMEs — and your local IT partner for hosting, support, Microsoft 365 and more. Location: Switzerland.",
       quickTitle: "Quick Links",
       legalTitle: "Legal",
       socialTitle: "Social",

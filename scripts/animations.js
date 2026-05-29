@@ -174,14 +174,16 @@ const MARQUEE_CANTONS = [
 ];
 
 const MARQUEE_TERMS = [
-  "Webdesign", "Frontend", "UX", "UI", "Hosting", "Wartung", "SEO",
+  "Webdesign", "IT-Support", "Microsoft 365", "Hosting", "Wartung", "SEO",
+  "Backup", "Cybersecurity", "Cloud", "Managed IT", "Endpoint-Schutz",
   "Performance", "Mobile-First", "Responsive", "Accessibility", "Lighthouse",
+  "Care-Plan", "SLA", "Standortbestimmung", "M365 Admin", "Patch Management",
   "Conversion", "Analytics", "Landing Page", "Onepager", "Branding",
   "Typografie", "Microcopy", "Storytelling", "HTML", "CSS", "JavaScript",
   "JAMstack", "Headless CMS", "Core Web Vitals", "WCAG", "DSGVO",
-  "DSG-konform", "Handcoded", "Swiss Made", "Made in CH", "Visual Identity",
-  "Prototyping", "Wireframing", "Content Strategy", "A/B Testing", "Funnel",
-  "Static Sites", "Edge Hosting",
+  "DSG-konform", "FADP", "Handcoded", "Swiss Made", "Made in CH",
+  "Visual Identity", "Prototyping", "Wireframing", "A/B Testing",
+  "Static Sites", "Edge Hosting", "IT-Sprechstunde",
 ];
 
 function buildMarqueeItems() {
