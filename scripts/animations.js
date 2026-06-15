@@ -72,13 +72,41 @@ function initScrollProgress() {
 function initHeaderShrink() {
   const header = document.querySelector('.site-header');
   if (!header) return;
-  let last = 0;
+  let last = window.scrollY;
+  let accumulated = 0;
+  let ticking = false;
+
   const tick = () => {
     const y = window.scrollY;
-    header.classList.toggle('is-shrunk', y > 40);
+    const delta = y - last;
+
+    if (y <= 40) {
+      header.classList.remove('is-shrunk');
+      accumulated = 0;
+    } else if (Math.sign(delta) !== Math.sign(accumulated)) {
+      accumulated = delta;
+    } else {
+      accumulated += delta;
+    }
+
+    if (accumulated > 22) {
+      header.classList.add('is-shrunk');
+      accumulated = 0;
+    } else if (accumulated < -10) {
+      header.classList.remove('is-shrunk');
+      accumulated = 0;
+    }
+
     last = y;
+    ticking = false;
   };
-  window.addEventListener('scroll', tick, { passive: true });
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(tick);
+      ticking = true;
+    }
+  }, { passive: true });
   tick();
 }
 

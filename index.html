@@ -61,7 +61,7 @@
     <link rel="stylesheet" href="styles/faq.css" />
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="stylesheet" href="styles/animations.css" />
-    <link rel="icon" href="assets/images/light.svg" data-favicon />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg?v=3" />
 
     <script type="module" src="scripts/main.js"></script>
     <script type="module" src="scripts/contact.js"></script>
@@ -74,7 +74,7 @@
     />
   </head>
 
-  <body data-lang="de" data-theme="dark">
+  <body data-lang="de" data-theme="dark"><script>(function(){try{var u=new URLSearchParams(location.search).get("theme");var s=localStorage.getItem("ewebit-theme");var t=(u==="dark"||u==="light")?u:s;if(t==="dark"||t==="light"){document.body.setAttribute("data-theme",t);}}catch(e){}})();</script>
     <a class="skip-link" href="#kontakt" data-i18n="nav.skip">Zum Inhalt springen</a>
 
     <!-- SVG grain filter for noise overlay -->
@@ -106,21 +106,40 @@
     <header class="site-header" id="top">
       <div class="header-inner">
         <a class="logo" href="./index.html" aria-label="ewebIT">
-          <img class="logo-mark is-light" src="assets/images/light.svg" alt="" aria-hidden="true" />
-          <img class="logo-mark is-dark" src="assets/images/dark.svg" alt="" aria-hidden="true" />
+          <svg class="logo-mark" viewBox="230 210 570 600" aria-hidden="true" focusable="false">
+            <use class="logo-layer logo-layer--body" href="assets/images/logo.svg#logo-body"></use><use class="logo-layer logo-layer--accent" href="assets/images/logo.svg#logo-accent"></use>
+          </svg>
           <span class="logo-text">
             <span class="logo-text__primary">eweb</span><span class="logo-text__dot">·</span><span class="logo-text__sub">IT</span>
           </span>
         </a>
 
-        <nav class="site-nav" id="site-nav" aria-label="" data-i18n-attr="aria-label:nav.aria">
-          <a href="#warum-wir" data-i18n="nav.why"><span class="nav-link__num">01</span><span class="nav-link__label">Warum wir</span></a>
-          <a href="#leistungen" data-i18n="nav.services"><span class="nav-link__num">02</span><span class="nav-link__label">Leistungen</span></a>
-          <a href="#pakete" data-i18n="nav.packages"><span class="nav-link__num">03</span><span class="nav-link__label">Pakete</span></a>
-          <a href="#ablauf" data-i18n="nav.process"><span class="nav-link__num">04</span><span class="nav-link__label">Ablauf</span></a>
-          <a href="#faq" data-i18n="nav.faq"><span class="nav-link__num">05</span><span class="nav-link__label">FAQ</span></a>
-          <a href="#kontakt" data-i18n="nav.contact"><span class="nav-link__num">06</span><span class="nav-link__label">Kontakt</span></a>
-        </nav>
+        <div class="nav-stack" id="site-nav">
+          <svg class="nav-connector" aria-hidden="true">
+            <path class="nav-connector__path"></path>
+          </svg>
+
+          <nav class="area-nav" aria-label="" data-i18n-attr="aria-label:nav.areasAria">
+            <span class="nav-level-label" data-i18n="nav.areasLabel">Bereiche</span>
+            <span class="area-nav__indicator" aria-hidden="true"></span>
+            <a class="area-nav__link is-active" href="./index.html" aria-current="page" data-i18n="nav.areaWebsites">Websites</a>
+            <a class="area-nav__link" href="./seo.html" data-i18n="nav.areaSeo">SEO &amp; Optimierung</a>
+            <a class="area-nav__link" href="./automatisierung.html" data-i18n="nav.areaAutomation">Automatisierung</a>
+            <a class="area-nav__link" href="./it-cloud.html" data-i18n="nav.areaCloud">IT &amp; Cloud</a>
+            <a class="area-nav__link" href="./it-support.html" data-i18n="nav.areaSupport">IT-Support</a>
+          </nav>
+
+          <nav class="site-nav" aria-label="" data-i18n-attr="aria-label:nav.aria">
+            <span class="nav-level-label" data-i18n="nav.pageLabel">Auf dieser Seite</span>
+            <span class="site-nav__indicator" aria-hidden="true"></span>
+            <a class="is-active" href="#warum-wir" aria-current="location" data-i18n="nav.why"><span class="nav-link__num">01</span><span class="nav-link__label">Warum wir</span></a>
+            <a href="#leistungen" data-i18n="nav.services"><span class="nav-link__num">02</span><span class="nav-link__label">Leistungen</span></a>
+            <a href="#pakete" data-i18n="nav.packages"><span class="nav-link__num">03</span><span class="nav-link__label">Pakete</span></a>
+            <a href="#ablauf" data-i18n="nav.process"><span class="nav-link__num">04</span><span class="nav-link__label">Ablauf</span></a>
+            <a href="#faq" data-i18n="nav.faq"><span class="nav-link__num">05</span><span class="nav-link__label">FAQ</span></a>
+            <a href="#kontakt" data-i18n="nav.contact"><span class="nav-link__num">06</span><span class="nav-link__label">Kontakt</span></a>
+          </nav>
+        </div>
 
         <div class="header-actions">
           <div class="lang-switch" role="group" aria-label="" data-i18n-attr="aria-label:lang.aria">
@@ -131,25 +150,7 @@
 
           <button type="button" class="theme-toggle" aria-label="" aria-pressed="true" data-theme-toggle>
             <span class="sr-only" data-i18n="theme.toggle">Theme wechseln</span>
-            <svg class="theme-toggle-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
-              <defs>
-                <mask id="theme-toggle-mask">
-                  <rect width="100%" height="100%" fill="white" />
-                  <circle class="theme-toggle-mask-circle" cx="33" cy="0" r="9" fill="black" />
-                </mask>
-              </defs>
-              <circle class="theme-toggle-body" cx="12" cy="12" r="5" fill="currentColor" stroke="none" mask="url(#theme-toggle-mask)" />
-              <g class="theme-toggle-rays">
-                <line x1="12" y1="1" x2="12" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="1" y1="12" x2="3" y2="12" />
-                <line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="5.64" y1="5.64" x2="4.22" y2="4.22" />
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                <line x1="5.64" y1="18.36" x2="4.22" y2="19.78" />
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-              </g>
-            </svg>
+            <svg class="theme-toggle-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><g class="theme-icon theme-icon--sun"><circle cx="12" cy="12" r="5" fill="currentColor" stroke="none" /><g class="theme-toggle-rays"><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="5.64" y1="5.64" x2="4.22" y2="4.22" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /><line x1="5.64" y1="18.36" x2="4.22" y2="19.78" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /></g></g><path class="theme-icon theme-icon--moon" fill="currentColor" stroke="none" d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 1 0 20.354 15.354Z" /></svg>
           </button>
 
           <button type="button" class="nav-toggle" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="" data-i18n-attr="aria-label:nav.toggle">
@@ -756,6 +757,7 @@
         </div>
 
         <div class="founder-grid">
+          <!-- Portrait disabled for now — re-enable once a real photo is ready
           <figure class="founder-portrait">
             <div class="founder-portrait__frame">
               <img
@@ -771,6 +773,7 @@
               Persönlich. Lokal. Verantwortlich.
             </figcaption>
           </figure>
+          -->
 
           <div class="founder-copy">
             <p class="mono-cap" data-i18n="founder.eyebrow">Wer ist eweb IT?</p>
@@ -1057,8 +1060,9 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="logo footer-logo" href="./index.html" aria-label="ewebIT">
-            <img class="logo-mark is-light" src="assets/images/light.svg" alt="" aria-hidden="true" />
-            <img class="logo-mark is-dark" src="assets/images/dark.svg" alt="" aria-hidden="true" />
+            <svg class="logo-mark" viewBox="230 210 570 600" aria-hidden="true" focusable="false">
+              <use class="logo-layer logo-layer--body" href="assets/images/logo.svg#logo-body"></use><use class="logo-layer logo-layer--accent" href="assets/images/logo.svg#logo-accent"></use>
+            </svg>
             <span class="logo-text">
               <span class="logo-text__primary">eweb</span><span class="logo-text__dot">·</span><span class="logo-text__sub">IT</span>
             </span>

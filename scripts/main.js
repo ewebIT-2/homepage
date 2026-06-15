@@ -21,6 +21,14 @@ const translations = {
     nav: {
       skip: "Zum Inhalt springen",
       aria: "Hauptnavigation",
+      areasAria: "Leistungsbereiche",
+      areasLabel: "Bereiche",
+      pageLabel: "Auf dieser Seite",
+      areaWebsites: "Websites",
+      areaSeo: "SEO & Optimierung",
+      areaAutomation: "Automatisierung",
+      areaCloud: "IT & Cloud",
+      areaSupport: "IT-Support",
       toggle: "Menü",
       why: "Warum wir",
       services: "Leistungen",
@@ -415,7 +423,7 @@ const translations = {
       aboutTitle: "Über uns",
       about:
         "Schweizer Webdesign-Studio für schnelle, klare und wartbare Websites für KMU — und Ihr lokaler IT-Partner für Hosting, Support, Microsoft 365 und mehr. Standort: Schweiz.",
-      quickTitle: "Quick Links",
+      quickTitle: "Navigation",
       legalTitle: "Rechtliches",
       socialTitle: "Social",
       linkedin: "LinkedIn",
@@ -436,6 +444,14 @@ const translations = {
     nav: {
       skip: "Skip to content",
       aria: "Primary navigation",
+      areasAria: "Service areas",
+      areasLabel: "Areas",
+      pageLabel: "On this page",
+      areaWebsites: "Websites",
+      areaSeo: "SEO & Optimisation",
+      areaAutomation: "Automation",
+      areaCloud: "IT & Cloud",
+      areaSupport: "IT Support",
       toggle: "Open menu",
       why: "Why Us",
       services: "Services",
@@ -846,7 +862,6 @@ const buttons = document.querySelectorAll("[data-lang-toggle]");
 const langSwitch = document.querySelector(".lang-switch");
 const langIndicator = document.querySelector(".lang-indicator");
 const themeToggle = document.querySelector("[data-theme-toggle]");
-const favicon = document.querySelector("[data-favicon]");
 const storedTheme = localStorage.getItem("ewebit-theme");
 const storedLang = localStorage.getItem("ewebit-lang");
 
@@ -981,12 +996,6 @@ function setTheme(theme) {
     const isDark = theme === "dark";
     themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
     updateThemeLabel();
-  }
-  if (favicon) {
-    favicon.setAttribute(
-      "href",
-      theme === "dark" ? "assets/images/dark.svg" : "assets/images/light.svg"
-    );
   }
   localStorage.setItem("ewebit-theme", theme);
 }
