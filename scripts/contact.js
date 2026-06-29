@@ -1,5 +1,7 @@
-const form = document.getElementById("contact-form");
-if (form) {
+export function initContactForm() {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+
   const successEl = document.getElementById("contact-success");
   const errorEl = document.getElementById("contact-error");
   const submitBtn = form.querySelector('[type="submit"]');

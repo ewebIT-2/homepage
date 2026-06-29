@@ -8,6 +8,8 @@ import {
   playRadialReveal,
 } from "./theme-toggle.js";
 import { initAnimations } from "./animations.js";
+import { initRouter } from "./router.js";
+import { initContactForm } from "./contact.js";
 
 const translations = {
   de: {
@@ -1108,3 +1110,5 @@ initProcessAnimation({ prefersReducedMotion });
 initThemeToggleEffects({ sound: true });
 initAnimations({ prefersReducedMotion });
 initManifestStagger();
+initContactForm();
+initRouter({ prefersReducedMotion });

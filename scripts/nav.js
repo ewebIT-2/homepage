@@ -1,11 +1,19 @@
+let _setActiveSiteLink = null;
+let _getSiteLinks = null;
+
+export function reinitSiteNavLinks() {
+  if (!_setActiveSiteLink || !_getSiteLinks) return;
+  _getSiteLinks().forEach((link) => {
+    link.addEventListener("click", () => _setActiveSiteLink(link));
+  });
+}
+
 export function initMobileNav({ breakpoint = 960 } = {}) {
   const nav = document.querySelector("#site-nav");
   const toggle = document.querySelector("[data-nav-toggle]");
   const overlay = document.querySelector("[data-nav-overlay]");
   const areaNav = nav?.querySelector(".area-nav");
   const areaLinks = areaNav?.querySelectorAll(".area-nav__link") ?? [];
-  const siteNav = nav?.querySelector(".site-nav");
-  const siteLinks = siteNav?.querySelectorAll("a") ?? [];
   const connector = nav?.querySelector(".nav-connector");
   const connectorPath = connector?.querySelector(".nav-connector__path");
 
@@ -13,9 +21,14 @@ export function initMobileNav({ breakpoint = 960 } = {}) {
     return;
   }
 
+  // Live getters — .site-nav is replaced on SPA navigation so we must not cache it
+  const getSiteNav = () => nav?.querySelector(".site-nav");
+  const getSiteLinks = () => Array.from(nav?.querySelectorAll(".site-nav a") ?? []);
+
   const navLinks = nav.querySelectorAll("a");
 
   const updateIndicators = () => {
+    const siteNav = getSiteNav();
     const activeAreaLink = areaNav?.querySelector(".area-nav__link.is-active");
     const activeSiteLink = siteNav?.querySelector("a.is-active");
     if (!areaNav || !siteNav || !activeAreaLink || !activeSiteLink) {
@@ -62,7 +75,7 @@ export function initMobileNav({ breakpoint = 960 } = {}) {
   };
 
   const setActiveSiteLink = (activeLink) => {
-    siteLinks.forEach((link) => {
+    getSiteLinks().forEach((link) => {
       const isActive = link === activeLink;
       link.classList.toggle("is-active", isActive);
       if (isActive) {
@@ -73,6 +86,10 @@ export function initMobileNav({ breakpoint = 960 } = {}) {
     });
     updateIndicators();
   };
+
+  // Expose to reinitSiteNavLinks so the router can re-attach after navigation
+  _setActiveSiteLink = setActiveSiteLink;
+  _getSiteLinks = getSiteLinks;
 
   areaLinks.forEach((link) => {
     link.addEventListener("click", () => {
@@ -91,7 +108,7 @@ export function initMobileNav({ breakpoint = 960 } = {}) {
     });
   });
 
-  siteLinks.forEach((link) => {
+  getSiteLinks().forEach((link) => {
     link.addEventListener("click", () => setActiveSiteLink(link));
   });
 
@@ -103,10 +120,11 @@ export function initMobileNav({ breakpoint = 960 } = {}) {
   const updateActiveSiteLinkFromScroll = () => {
     scrollTicking = false;
     const threshold = Math.min(window.innerHeight * 0.35, 280);
-    let activeLink = siteLinks[0];
+    const currentSiteLinks = getSiteLinks();
+    let activeLink = currentSiteLinks[0];
 
-    siteLinks.forEach((link) => {
-      const target = document.querySelector(link.hash);
+    currentSiteLinks.forEach((link) => {
+      const target = link.hash ? document.querySelector(link.hash) : null;
       if (target && target.getBoundingClientRect().top <= threshold) {
         activeLink = link;
       }

@@ -27,6 +27,17 @@ export function initAnimations() {
   initCounters();
 }
 
+// Called after every SPA navigation — skips the one-time global inits
+export function initPageAnimations() {
+  const h1 = document.querySelector('.hero-title');
+  if (h1 && !h1.querySelector('.word')) splitHeroTitle();
+  initSectionTitleReveal();
+  initMarquee();
+  if (!isCoarse && !reduceMotion) initMagnetic();
+  if (!isCoarse && !reduceMotion) initTilt();
+  initCounters();
+}
+
 /* ─────────────── Page veil intro ─────────────── */
 function initPageVeil() {
   const veil = document.querySelector('[data-page-veil]');
@@ -227,7 +238,7 @@ function buildMarqueeItems() {
 
 function initMarquee() {
   const track = document.querySelector("[data-marquee-track]");
-  if (!track) return;
+  if (!track || track.children.length > 0) return;
 
   const items = buildMarqueeItems();
 
