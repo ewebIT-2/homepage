@@ -543,19 +543,37 @@ em { font-style: italic; color: var(--accent); font-family: var(--f-display); fo
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--hairline);
 }
+/* Middle bar via pseudo-element — ordered between bar 1 and bar 2 */
+.nav-toggle::before {
+  content: '';
+  display: block;
+  width: 18px; height: 2px;
+  background: var(--ink);
+  border-radius: 1px;
+  order: 1;
+  transition: opacity 180ms var(--ease-soft);
+  flex-shrink: 0;
+}
 .nav-toggle-bar {
   display: block;
-  width: 16px; height: 1.5px;
+  width: 18px; height: 2px;
   background: var(--ink);
+  border-radius: 1px;
   transition: transform 260ms var(--ease-spring), opacity 200ms var(--ease-soft);
   transform-origin: center;
+  flex-shrink: 0;
 }
-.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(1) { transform: translateY(2.75px) rotate(45deg); }
-.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(2) { transform: translateY(-2.75px) rotate(-45deg); }
+/* Explicit flex order: top bar → middle (pseudo) → bottom bar */
+.nav-toggle-bar:nth-child(1) { order: 0; }
+.nav-toggle-bar:nth-child(2) { order: 2; }
+/* X animation: bars meet at center where the pseudo bar was */
+.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(2) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle[aria-expanded='true']::before { opacity: 0; }
 
 .nav-overlay {
   position: fixed; inset: 0;
@@ -1524,84 +1542,127 @@ body.nav-open .nav-overlay { opacity: 1; pointer-events: auto; }
    RESPONSIVE
    ========================================================================= */
 
-/* ── TABLET (≤ 960px): collapse nav into drawer, stack two-column grids ── */
+/* ── TABLET (≤ 960px): right-panel nav, stack two-column grids ── */
 @media (max-width: 960px) {
+  /* Prevent background from scrolling while the panel is open */
+  body.nav-open { overflow: hidden; }
+
+  /* Right-edge slide-in panel — starts below the header pill */
   .nav-stack {
     position: fixed;
-    inset: 0;
+    top: 112px; right: 0; bottom: 0;
+    left: auto;
+    width: min(280px, 88vw);
     background: var(--bg);
-    display: block;
-    padding: 96px 40px 40px;
-    transform: translateY(-100%);
-    transition: transform 360ms var(--ease-out-quint);
+    border: 1px solid var(--hairline);
+    border-right: none;
+    border-radius: 16px 0 0 0;
+    box-shadow: -12px 8px 40px rgba(0,0,0,0.22);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 36px 16px 40px;
+    transform: translateX(100%);
+    transition: transform 380ms cubic-bezier(0.32, 0.72, 0, 1);
     z-index: 75;
     overflow-y: auto;
   }
-  body.nav-open .nav-stack { transform: translateY(0); }
-  .area-nav,
+  body.nav-open .nav-stack { transform: translateX(0); }
+
+  /* Decorative elements not needed in the panel */
+  .nav-connector,
+  .area-nav__indicator,
+  .site-nav__indicator { display: none; }
+
+  /* Section links — shown below a separator, smaller/lighter than area links */
   .site-nav {
     flex-direction: column;
     align-items: stretch;
-    gap: 4px;
+    gap: 1px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hairline);
+    overflow: visible;
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
   }
-  .area-nav {
-    padding: 0 0 24px;
-    margin-bottom: 24px;
-    border-bottom: 1px solid var(--hairline);
+  .site-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-family: var(--f-sans);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    color: var(--ink-3);
+    background: none;
   }
-  .area-nav::after,
-  .area-nav__indicator,
-  .site-nav__indicator,
-  .nav-connector {
-    display: none;
-  }
+  .site-nav a:hover { color: var(--ink-2); background: rgba(255,255,255,0.03); }
+  .site-nav a.is-active { color: var(--accent); background: rgba(232,177,74,0.07); }
+  .nav-link__num { font-family: var(--f-mono); font-size: 10px; color: var(--ink-4); }
+  .site-nav a.is-active .nav-link__num { color: var(--accent); opacity: 0.6; }
+
   .nav-level-label {
     display: block;
-    margin-bottom: 8px;
     font-family: var(--f-mono);
     font-size: 10px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-4);
+    margin-bottom: 4px;
   }
+
+  /* Reset desktop compact overrides so the area-nav is always visible in the panel */
+  .area-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 0;
+    border: none;
+    overflow: visible;
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    transition: none;
+  }
+  .area-nav::after,
+  .area-nav__indicator { display: none; }
+
   .area-nav__link {
-    align-self: flex-start;
-    padding: 5px 12px;
-    font-family: var(--f-display);
-    font-size: clamp(24px, 6vw, 38px);
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: 10px;
+    font-family: var(--f-sans);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
     text-transform: none;
-    color: var(--ink);
+    color: var(--ink-2);
+    border: none;
+    background: none;
   }
+  .area-nav__link:hover { color: var(--ink); background: rgba(255,255,255,0.04); }
+  .area-nav__link:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
   .area-nav__link.is-active {
     color: var(--accent);
-    border: 1px solid var(--accent);
     background: rgba(232, 177, 74, 0.08);
+    border: none;
   }
-  .site-nav a {
-    font-family: var(--f-display);
-    font-size: clamp(24px, 6vw, 38px);
-    padding: 6px 0;
-    font-weight: 400;
-    flex-direction: row;
-    gap: 18px;
-    color: var(--ink);
-  }
-  .site-nav a.is-active {
-    align-self: flex-start;
-    padding-right: 12px;
-    padding-left: 12px;
-    border: 1px solid var(--accent);
-    background: rgba(232, 177, 74, 0.08);
-  }
-  .site-nav a:hover { background: transparent; color: var(--accent); }
-  .nav-link__num { font-size: 11px; color: var(--ink-3); align-self: center; }
+
   .nav-toggle { display: inline-flex; }
 
-  /* keep header pill solid behind the open drawer so toggles stay reachable */
+  /* Keep header pill opaque so the header stays readable above the overlay */
   body.nav-open .header-inner::before { background: var(--bg); }
-  /* lift header controls above the fullscreen drawer so logo + close stay visible */
+  /* Keep logo + controls above the overlay (z-index 70) and the panel (z-index 75) */
   .logo, .header-actions { position: relative; z-index: 76; }
 
   .hero { padding-top: clamp(110px, 16vh, 160px); }
@@ -1636,6 +1697,8 @@ body.nav-open .nav-overlay { opacity: 1; pointer-events: auto; }
 /* ── SMALL MOBILE (≤ 560px): tighten header, marquee fades, hide DE/EN to declutter ── */
 @media (max-width: 560px) {
   .header-inner { gap: 10px; padding: 6px 10px 6px 14px; }
+  /* Header is shorter here (6+38+6 inner + 36 site-header = ~86px) + gap */
+  .nav-stack { top: 96px; }
   .lang-switch, .theme-toggle { display: inline-flex; }
 
   .marquee__track { gap: 20px; }
