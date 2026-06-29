@@ -1,10 +1,41 @@
 let _setActiveSiteLink = null;
 let _getSiteLinks = null;
 
+// While a nav-link click is scrolling the page, keep the header compact so the
+// header expansion doesn't shift the layout and make the target land behind it.
+function freezeCompactHeader(ms = 900) {
+  const header = document.querySelector(".site-header");
+  if (!header?.classList.contains("is-shrunk")) return;
+  let live = true;
+  const mo = new MutationObserver(() => {
+    if (live && !header.classList.contains("is-shrunk")) {
+      header.classList.add("is-shrunk");
+    }
+  });
+  mo.observe(header, { attributes: true, attributeFilter: ["class"] });
+  setTimeout(() => { live = false; mo.disconnect(); }, ms);
+}
+
+// Attaches the click handler for a single site-nav link.
+// Uses scrollIntoView (which respects CSS scroll-padding-top) instead of the
+// browser's default hash navigation so we control the scroll precisely.
+function attachSiteNavClick(link, activateFn) {
+  link.addEventListener("click", (e) => {
+    activateFn(link);
+    if (!link.hash) return;
+    const target = document.querySelector(link.hash);
+    if (!target) return;
+    e.preventDefault();
+    freezeCompactHeader();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.replaceState(null, "", link.hash);
+  });
+}
+
 export function reinitSiteNavLinks() {
   if (!_setActiveSiteLink || !_getSiteLinks) return;
   _getSiteLinks().forEach((link) => {
-    link.addEventListener("click", () => _setActiveSiteLink(link));
+    attachSiteNavClick(link, _setActiveSiteLink);
   });
 }
 
@@ -109,7 +140,7 @@ export function initMobileNav({ breakpoint = 960 } = {}) {
   });
 
   getSiteLinks().forEach((link) => {
-    link.addEventListener("click", () => setActiveSiteLink(link));
+    attachSiteNavClick(link, setActiveSiteLink);
   });
 
   if (nav && "ResizeObserver" in window) {
